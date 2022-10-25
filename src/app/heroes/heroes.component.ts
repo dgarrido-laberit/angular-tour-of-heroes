@@ -22,4 +22,8 @@ export class HeroesComponent implements OnInit {
     this.selectedHero = hero;
   } 
 
+  onChangeTextParent (text: string): void {
+    console.log("P: " + text);
+  }
+
 }
