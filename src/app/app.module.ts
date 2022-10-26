@@ -10,18 +10,23 @@ import { HeroDetailComponent } from './hero-detail/hero-detail.component';
 import { LabelComponent } from './label/label.component';
 import { MessagesComponent } from './messages/messages.component'; 
 
+import { HttpClientModule } from '@angular/common/http';
+import { CommonModule } from '@angular/common';
+
 @NgModule({
   declarations: [
     AppComponent,
     HeroesComponent,
     HeroDetailComponent,
     LabelComponent,
-    MessagesComponent
+    MessagesComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    CommonModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -5,9 +5,23 @@
             <span class="badge">{{hero.id}}</span>
             <span class="name">{{hero.name}}</span>
         </button>
-        <app-label [text]="hero.name" (textChange)="onChangeTextParent($event, hero)"></app-label>
+        <app-label [(text)]="hero.name"></app-label>
+        <!-- <app-label [text]="hero.name" (textChange)="onChangeTextParent($event, hero)"></app-label> -->
         <!-- <app-label [text]="hero.name" (textChange)="hero.name = $event"></app-label> -->
     </li>
 </ul>
+
+
+<div class="card">
+    <ul class="users">
+        <li *ngFor="let user of users">
+            <!-- <app-label [(text)]="user.name"></app-label> -->
+            <div class="name">{{user.name}}</div>
+            <div>{{user?.email}}</div>
+            <div>{{user?.address?.city}}</div>
+            <div>{{user?.id}}</div>
+        </li>
+    </ul>
+</div>
 
 <app-hero-detail [hero]="selectedHero"></app-hero-detail>
