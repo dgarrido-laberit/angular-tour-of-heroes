@@ -13,6 +13,8 @@ import { MessageService } from './message.service';
 })
 export class HeroService {
 
+  constructor(private messageService: MessageService) { }
+  
   // getHeroes(): Hero[] {
   //   return HEROES;
   // }
@@ -23,5 +25,4 @@ export class HeroService {
     return heroes;
   }
 
-  constructor(private messageService: MessageService) { }
 }

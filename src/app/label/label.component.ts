@@ -13,7 +13,7 @@ export class LabelComponent implements OnInit {
   @Output() textChange = new EventEmitter<string>();
 
   constructor() { }
-
+ 
   ngOnInit(): void {
   }
 

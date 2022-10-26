@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { Observable, firstValueFrom, lastValueFrom } from 'rxjs';
 
 import { User } from '../Models/users.model';
 
@@ -18,16 +18,16 @@ export class UserService {
   }
 
   // // // Versión 2 - no recomendable (mejor usar promesas con async / await en vez de .then)
-  // getUsersPromise (): Promise<User[]> {
-  //   const url = 'https://jsonplaceholder.typicode.com/users';
-  //   return this.http.get<User[]>(url).toPromise();
-  // }
+  getUsersPromise (): Promise<User[]> {
+    const url = 'https://jsonplaceholder.typicode.com/users';
+    return firstValueFrom(this.http.get<User[]>(url));
+  }
 
   // // // Versión 3 - recomendable
-  // // async / await
-  // getUsersPromiseAsync (): Promise<User[]> {
-  //   const url = 'https://jsonplaceholder.typicode.com/users';
-  //   return this.http.get<User[]>(url).toPromise();
-  // }
+  // async / await
+  getUsersPromiseAsync (): Promise<User[]> {
+    const url = 'https://jsonplaceholder.typicode.com/users';
+    return firstValueFrom(this.http.get<User[]>(url));
+  }
 
 }

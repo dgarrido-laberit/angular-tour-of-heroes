@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Hero } from '../hero'
-import { HEROES } from '../mock-heroes';
+// import { HEROES } from '../mock-heroes';
 import { HeroService } from '../hero.service';
-import { HttpClient } from '@angular/common/http';
+// import { HttpClient } from '@angular/common/http';
 import { UserService } from '../Services/user.service';
 
 import { User } from '../Models/users.model';
@@ -18,11 +18,11 @@ export class HeroesComponent implements OnInit {
   // heroes = HEROES;
   heroes: Hero[] = [];
 
-  selectedHero?: Hero;
+  selectedHero: Hero;
 
   name = 'hero';
 
-  users?: User[];
+  users: User[];
 
   // users = [
   //   {name: "hola"}
@@ -32,7 +32,8 @@ export class HeroesComponent implements OnInit {
 
   ngOnInit(): void {
     this.getHeroes();
-    this.getUsers();
+
+    this.getUsersPromiseAsync();
   }  
 
   // Versión 1 - A veces se usará
@@ -43,17 +44,17 @@ export class HeroesComponent implements OnInit {
   }
 
   // // // Versión 2 - no recomendable (mejor usar promesas con async / await en vez de .then)
-  // getUsersPromise (): void {
-  //   this.userService.getUsersPromise().then(data => {
-  //     this.users = data;
-  //   });
-  // }
+  getUsersPromise (): void {
+    this.userService.getUsersPromise().then(data => {
+      this.users = data;
+    });
+  }
 
   // // // Versión 3 - recomendable
-  // // async / await
-  // async getUsersPromiseAsync (): Promise<void> {
-  //   this.users = await this.userService.getUsersPromiseAsync();
-  // }
+  // async / await
+  async getUsersPromiseAsync (): Promise<void> {
+    this.users = await this.userService.getUsersPromiseAsync();
+  }
   
   onSelect(hero: Hero): void {
     this.selectedHero = hero;

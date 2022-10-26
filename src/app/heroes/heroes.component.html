@@ -17,9 +17,9 @@
         <li *ngFor="let user of users">
             <!-- <app-label [(text)]="user.name"></app-label> -->
             <div class="name">{{user.name}}</div>
-            <div>{{user?.email}}</div>
-            <div>{{user?.address?.city}}</div>
-            <div>{{user?.id}}</div>
+            <div>{{user.email}}</div>
+            <div>{{user.address?.city}}</div>
+            <div>{{user.id}}</div>
         </li>
     </ul>
 </div>
