@@ -7,6 +7,8 @@ import { UserService } from '../Services/user.service';
 
 import { User } from '../Models/users.model';
 
+import { MessageService } from '../message.service';
+
 
 @Component({
   selector: 'app-heroes',
@@ -28,7 +30,7 @@ export class HeroesComponent implements OnInit {
   //   {name: "hola"}
   // ];
 
-  constructor(private heroService: HeroService, private userService: UserService) { }
+  constructor(private heroService: HeroService, private messageService: MessageService, private userService: UserService) { }
 
   ngOnInit(): void {
     this.getHeroes();
@@ -58,6 +60,7 @@ export class HeroesComponent implements OnInit {
   
   onSelect(hero: Hero): void {
     this.selectedHero = hero;
+    this.messageService.add(`HeroesComponent: Selected hero id=${hero.id}`);
   } 
   
   // onChangeTextParent (text: string, hero : Hero): void {
@@ -71,7 +74,8 @@ export class HeroesComponent implements OnInit {
 
   
   getHeroes(): void {
-    this.heroService.getHeroes().subscribe(heroes => this.heroes = heroes);
+    this.heroService.getHeroes().subscribe(heroes =>
+      this.heroes = heroes);
   }
 
 }
