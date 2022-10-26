@@ -4,9 +4,9 @@
         <button [class.selected]="hero === selectedHero" type="button" (click)="onSelect(hero)">
             <span class="badge">{{hero.id}}</span>
             <span class="name">{{hero.name}}</span>
-            <app-label [text]="hero.name" (textChange)="onChangeTextParent($event, hero)"></app-label>
-            <!-- <app-label [text]="hero.name" (textChange)="hero.name = $event"></app-label> -->
         </button>
+        <app-label [text]="hero.name" (textChange)="onChangeTextParent($event, hero)"></app-label>
+        <!-- <app-label [text]="hero.name" (textChange)="hero.name = $event"></app-label> -->
     </li>
 </ul>
 
