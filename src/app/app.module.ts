@@ -13,6 +13,7 @@ import { MessagesComponent } from './messages/messages.component';
 import { HttpClientModule } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { HeroTypeComponent } from './hero-type/hero-type.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     LabelComponent,
     MessagesComponent,
     DashboardComponent,
+    HeroTypeComponent,
   ],
   imports: [
     BrowserModule,
