@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 
-import { Hero } from './hero';
-import { HEROES } from './mock-heroes';
+import { Hero } from '../models/hero.model';
+import { HEROES } from '../mock-heroes';
 
 import { Observable, of } from 'rxjs';
 
