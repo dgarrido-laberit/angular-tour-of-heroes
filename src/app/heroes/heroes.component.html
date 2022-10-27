@@ -1,27 +1,26 @@
 <h2>My Heroes</h2>
 <ul class="heroes">
-    <li *ngFor="let hero of heroes">
-        <button [class.selected]="hero === selectedHero" type="button" (click)="onSelect(hero)">
-            <span class="badge">{{hero.id}}</span>
-            <span class="name">{{hero.name}}</span>
-        </button>
-        <app-label [(text)]="hero.name"></app-label>
-        <!-- <app-label [text]="hero.name" (textChange)="onChangeTextParent($event, hero)"></app-label> -->
-        <!-- <app-label [text]="hero.name" (textChange)="hero.name = $event"></app-label> -->
-    </li>
+  <li *ngFor="let hero of heroes">
+    <a routerLink="/detail/{{hero.id}}">
+      <span class="badge">{{hero.id}}</span> {{hero.name}}
+    </a>
+    <app-label [(text)]="hero.name"></app-label>
+    <!-- <app-label [text]="hero.name" (textChange)="onChangeTextParent($event, hero)"></app-label> -->
+    <!-- <app-label [text]="hero.name" (textChange)="hero.name = $event"></app-label> -->
+  </li>
 </ul>
 
 
 <div class="card">
-    <ul class="users">
-        <li *ngFor="let user of users">
-            <!-- <app-label [(text)]="user.name"></app-label> -->
-            <div class="name">{{user.name}}</div>
-            <div>{{user.email}}</div>
-            <div>{{user.address?.city}}</div>
-            <div>{{user.id}}</div>
-        </li>
-    </ul>
+  <ul class="users">
+    <li *ngFor="let user of users">
+      <!-- <app-label [(text)]="user.name"></app-label> -->
+      <div class="name">{{user.name}}</div>
+      <div>{{user.email}}</div>
+      <div>{{user.address?.city}}</div>
+      <div>{{user.id}}</div>
+    </li>
+  </ul>
 </div>
 
-<app-hero-detail [hero]="selectedHero"></app-hero-detail>
+<!-- <app-hero-detail [hero]="selectedHero"></app-hero-detail> -->

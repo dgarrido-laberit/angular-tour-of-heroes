@@ -20,7 +20,7 @@ export class HeroesComponent implements OnInit {
   // heroes = HEROES;
   heroes: Hero[] = [];
 
-  selectedHero: Hero;
+  // selectedHero: Hero;
 
   name = 'hero';
 
@@ -30,7 +30,8 @@ export class HeroesComponent implements OnInit {
   //   {name: "hola"}
   // ];
 
-  constructor(private heroService: HeroService, private messageService: MessageService, private userService: UserService) { }
+  // constructor(private heroService: HeroService, private messageService: MessageService, private userService: UserService) { }
+  constructor(private heroService: HeroService, private userService: UserService) { }
 
   ngOnInit(): void {
     this.getHeroes();
@@ -58,10 +59,10 @@ export class HeroesComponent implements OnInit {
     this.users = await this.userService.getUsersPromiseAsync();
   }
   
-  onSelect(hero: Hero): void {
-    this.selectedHero = hero;
-    this.messageService.add(`HeroesComponent: Selected hero id=${hero.id}`);
-  } 
+  // onSelect(hero: Hero): void {
+  //   this.selectedHero = hero;
+  //   this.messageService.add(`HeroesComponent: Selected hero id=${hero.id}`);
+  // } 
   
   // onChangeTextParent (text: string, hero : Hero): void {
   //   console.log("P: " + text);
