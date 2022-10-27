@@ -9,6 +9,8 @@ import { User } from '../Models/users.model';
 
 import { MessageService } from '../message.service';
 
+import { heroTypes, heroTypeNames } from '../Constants/hero.constants';
+
 
 @Component({
   selector: 'app-heroes',
@@ -19,6 +21,9 @@ export class HeroesComponent implements OnInit {
 
   // heroes = HEROES;
   heroes: Hero[] = [];
+
+  heroTypes = heroTypes;
+  heroTypeNames = heroTypeNames;
 
   // selectedHero: Hero;
 

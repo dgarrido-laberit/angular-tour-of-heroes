@@ -10,6 +10,8 @@ const routes: Routes = [
   { path: 'dashboard', component: DashboardComponent },
   { path: 'heroes', component: HeroesComponent },
   { path: 'detail/:id', component: HeroDetailComponent },
+
+  {path: '**', redirectTo: '', pathMatch: 'full'}, //Ruta cuando te equivocas de url (tiene que ir al final)
 ];
 
 @NgModule({
