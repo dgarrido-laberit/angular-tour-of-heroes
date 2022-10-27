@@ -8,12 +8,15 @@ import { HeroesComponent } from './heroes/heroes.component';
 import { FormsModule } from '@angular/forms';
 import { HeroDetailComponent } from './hero-detail/hero-detail.component';
 import { LabelComponent } from './label/label.component';
-import { MessagesComponent } from './messages/messages.component'; 
+import { MessagesComponent } from './messages/messages.component';
 
-import { HttpClientModule } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { HeroTypeComponent } from './hero-type/hero-type.component';
+
+import { HttpClientModule } from '@angular/common/http';
+import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
+import { InMemoryDataService } from './in-memory-data.service';
 
 @NgModule({
   declarations: [
@@ -31,6 +34,9 @@ import { HeroTypeComponent } from './hero-type/hero-type.component';
     FormsModule,
     CommonModule,
     HttpClientModule,
+    HttpClientInMemoryWebApiModule.forRoot(
+      InMemoryDataService, { dataEncapsulation: false }
+    )
   ],
   providers: [],
   bootstrap: [AppComponent]
