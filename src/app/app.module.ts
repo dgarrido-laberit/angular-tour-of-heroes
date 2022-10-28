@@ -19,6 +19,7 @@ import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryDataService } from './services/in-memory-data.service';
 import { HeroSearchComponent } from './components/hero-search/hero-search.component';
 import { TodosComponent } from './components/todos/todos.component';
+import { TodoTypeComponent } from './components/todo.type/todo.type.component';
 
 @NgModule({
   declarations: [
@@ -31,6 +32,7 @@ import { TodosComponent } from './components/todos/todos.component';
     HeroTypeComponent,
     HeroSearchComponent,
     TodosComponent,
+    TodoTypeComponent,
   ],
   imports: [
     BrowserModule,
