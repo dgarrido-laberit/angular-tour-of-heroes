@@ -8,17 +8,69 @@ import { Hero } from '../models/hero.model';
 export class InMemoryDataService implements InMemoryDbService {
   createDb() {
     const heroes = [
-      { id: 12, name: 'Dr. Nice' },
-      { id: 13, name: 'Bombasto' },
-      { id: 14, name: 'Celeritas' },
-      { id: 15, name: 'Magneta' },
-      { id: 16, name: 'RubberMan' },
-      { id: 17, name: 'Dynama' },
-      { id: 18, name: 'Dr. IQ' },
-      { id: 19, name: 'Magma' },
-      { id: 20, name: 'Tornado' }
+      { id: 12, name: 'Dr. Nice', typeId: 1 },
+      { id: 13, name: 'Bombastico', typeId: 3 },
+      { id: 14, name: 'Celeritas', typeId: 2 },
+      { id: 15, name: 'Magneta', typeId: 1 },
+      { id: 16, name: 'RubberMan', typeId: 3 },
+      { id: 17, name: 'Dynama', typeId: 1 },
+      { id: 18, name: 'Dr. IQ', typeId: 2 },
+      { id: 19, name: 'Magma', typeId: 2 },
+      { id: 20, name: 'Tornado', typeId: 1 },
     ];
-    return {heroes};
+    const users = [
+      {
+        "id": 1,
+        "name": "Leanne Graham",
+        "username": "Bret",
+        "email": "Sincere@april.biz",
+        "address": {
+          "street": "Kulas Light",
+          "suite": "Apt. 556",
+          "city": "Gwenborough",
+          "zipcode": "92998-3874",
+          "geo": {
+            "lat": "-37.3159",
+            "lng": "81.1496"
+          }
+        },
+        "phone": "1-770-736-8031 x56442",
+        "website": "hildegard.org",
+        "company": {
+          "name": "Romaguera-Crona",
+          "catchPhrase": "Multi-layered client-server neural-net",
+          "bs": "harness real-time e-markets"
+        }
+      },
+      {
+        "id": 2,
+        "name": "Ervin Howell",
+        "username": "Antonette",
+        "email": "Shanna@melissa.tv",
+        "address": {
+          "street": "Victor Plains",
+          "suite": "Suite 879",
+          "city": "Wisokyburgh",
+          "zipcode": "90566-7771",
+          "geo": {
+            "lat": "-43.9509",
+            "lng": "-34.4618"
+          }
+        },
+        "phone": "010-692-6593 x09125",
+        "website": "anastasia.net",
+        "company": {
+          "name": "Deckow-Crist",
+          "catchPhrase": "Proactive didactic contingency",
+          "bs": "synergize scalable supply-chains"
+        }
+      },
+    ];
+    return {
+      heroes: heroes,
+      users: users
+    }; //Es un objeto
+
   }
 
   // Overrides the genId method to ensure that a hero always has an id.
