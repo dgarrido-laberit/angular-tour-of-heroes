@@ -26,11 +26,11 @@ export class TodoService {
     this.messageService.add(`HeroService: ${message}`);
   }
 
-  getTasks(): Observable<Todo[]> {
+  getTodos(): Observable<Todo[]> {
     return this.http.get<Todo[]>(this.todoUrl)
       .pipe(
         tap(_ => this.log('fetched values')),
-        catchError(this.handleError<Todo[]>('getHeroes', []))
+        catchError(this.handleError<Todo[]>('getTodos', []))
       );
   }
 

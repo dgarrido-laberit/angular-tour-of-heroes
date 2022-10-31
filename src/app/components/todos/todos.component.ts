@@ -12,14 +12,14 @@ export class TodosComponent implements OnInit {
   
   todos: Todo[] = [];
   
-  constructor( private taskService: TodoService ) { }
+  constructor( private todoService: TodoService ) { }
 
   ngOnInit(): void {
-    this.getHeroes();
+    this.getTodos();
   }
 
-  getHeroes(): void {
-    this.taskService.getTasks()
+  getTodos(): void {
+    this.todoService.getTodos()
       .subscribe(todos => this.todos = todos);
   }
 
