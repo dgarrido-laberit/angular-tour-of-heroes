@@ -1,9 +1,9 @@
 <h2>ToDos List</h2>
 <div class="todos">
   <li *ngFor="let todo of todos">
-    <a>
-      {{todo.title}}
-      <app-todo-type [(id)]="todo.id"></app-todo-type>
-    </a>
+      <a [class]="todo.completed ? 'completed' : 'incompleted'">
+        {{todo.title}}
+        <app-todo-type [(id)]="todo.id"></app-todo-type>
+      </a>
   </li>
 </div>
