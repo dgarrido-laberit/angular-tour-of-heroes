@@ -4,9 +4,9 @@ import { Todo } from 'src/app/models/todo.model';
 import { TodoService } from 'src/app/services/todo.service';
 
 @Component({
-  selector: 'app-todos',
-  templateUrl: './todos.component.html',
-  styleUrls: ['./todos.component.scss']
+  selector: 'app-todos-page',
+  templateUrl: './todos-page.component.html',
+  styleUrls: ['./todos-page.component.scss']
 })
 export class TodosComponent implements OnInit {
   

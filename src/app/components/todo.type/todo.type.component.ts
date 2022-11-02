@@ -12,6 +12,9 @@ export class TodoTypeComponent implements OnInit {
   @Input() userId: number | undefined;
   @Output() userIdChange = new EventEmitter<number>();
 
+  todoTypes = todoTypes;
+  todoTypeNames = todoTypeNames;
+
   constructor() { }
 
   ngOnInit(): void {
