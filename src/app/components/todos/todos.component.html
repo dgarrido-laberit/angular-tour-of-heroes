@@ -1,7 +1,7 @@
 <h2>ToDos List</h2>
 <div class="todos">
   <li *ngFor="let todo of todos" class="todos_ind">
-    <a [class]="todo.completed ? 'completed' : 'incompleted'">
+    <div [class]="todo.completed ? 'completed' : 'incompleted'">
       <ul class="todos_ind_list">
         <li>
           <app-todo-type [(userId)]="todo.userId"></app-todo-type>
@@ -21,6 +21,6 @@
           <img src="\assets\img\user.png" width="50">
         </li>
       </ul>
-    </a>
+    </div>
   </li>
 </div>

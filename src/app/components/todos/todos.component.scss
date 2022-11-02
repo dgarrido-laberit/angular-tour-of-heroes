@@ -14,7 +14,7 @@
   left: .1em;
 }
 
-.todos a {
+.todos div {
   color: #333;
   text-decoration: none;
   margin: .5em;
@@ -39,12 +39,12 @@
   background-color: #ff6666;
 }
 
-.todos a:hover {
+.todos div:hover {
   color: #2c3a41;
   background-color: #e6e6e6;
 }
 
-.todos a:active {
+.todos div:active {
   background-color: #525252;
   color: #fafafa;
 }
