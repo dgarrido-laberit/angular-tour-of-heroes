@@ -10,14 +10,23 @@
   height: 10em;
   border-radius: 4px;
   display: block;
-  width: 200%;
+  width: 75%;
   border-width: 2px;
   border-style: solid;
   border-color: black;
 
+  // margin: 0 0 0.5rem 0;
+  // list-style-type: none;
+  // padding: 0;
+  // width: 40rem;
+
+  position: relative;
+  cursor: pointer;
+
   &:hover {
     color: #2c3a41;
     background-color: #e6e6e6;
+    left: .1em;
   }
 
   &:active {
@@ -30,6 +39,10 @@
 
     &_title {
       font-style: italic;
+      // overflow-wrap: break-word;
+      overflow: hidden;
+      // white-space: nowrap;
+      text-overflow: ellipsis;
     }
 
     &_completed {
@@ -49,9 +62,9 @@
 }
 
 .completed {
-background-color: #66ff66;
+  background-color: #66ff66;
 }
 
 .incompleted {
-background-color: #ff6666;
+  background-color: #ff6666;
 }
