@@ -1,6 +1,8 @@
 <div class="todos-page">
   <h2>ToDos List</h2>
-  <li *ngFor="let todo of todos" class="todos-page_ind" style="list-style-type: none;">
-    <app-todo-card [todo]="todo"></app-todo-card>
-  </li>
+  <div class="flex-container">
+    <li *ngFor="let todo of todos" class="flex-container_todo" style="list-style-type: none;">
+      <app-todo-card [todo]="todo"></app-todo-card>
+    </li>
+  </div>
 </div>
