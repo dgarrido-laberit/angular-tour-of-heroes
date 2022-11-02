@@ -1,3 +1,57 @@
 .etiqueta {
   font-weight: bold;
 }
+
+.container {
+  color: #333;
+  text-decoration: none;
+  margin: .5em;
+  padding: .5em .3em 0;
+  height: 10em;
+  border-radius: 4px;
+  display: block;
+  width: 200%;
+  border-width: 2px;
+  border-style: solid;
+  border-color: black;
+
+  &:hover {
+    color: #2c3a41;
+    background-color: #e6e6e6;
+  }
+
+  &:active {
+    background-color: #525252;
+    color: #fafafa;
+  }
+
+  &_list {
+    list-style-type: none;
+
+    &_title {
+      font-style: italic;
+    }
+
+    &_completed {
+      background-color: whitesmoke;
+      color: cornflowerblue;
+    }
+
+    &_id {
+      text-shadow: 0 0.1rem 0.4rem blue;
+    }
+
+    &_userId {
+      font-size: 2rem;
+      text-align: center;
+    }
+  }
+}
+
+.completed {
+background-color: #66ff66;
+}
+
+.incompleted {
+background-color: #ff6666;
+}

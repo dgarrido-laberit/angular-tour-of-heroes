@@ -10,7 +10,7 @@ import { Todo } from 'src/app/models/todo.model';
 })
 export class TodoTypeComponent implements OnInit {
 
-  @Input() todo: Todo | undefined;
+  @Input() todo: Todo;
   // @Output() userIdChange = new EventEmitter<Todo>();
 
   todoTypes = todoTypes;
