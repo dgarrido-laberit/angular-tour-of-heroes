@@ -50,7 +50,7 @@
 }
 
 .todos_ind_list{
-  list-style-type: armenian;
+  list-style-type: none;
   &_title {
     font-style: italic;
   }
@@ -62,7 +62,7 @@
     text-shadow: 0 0.1rem 0.4rem blue;
   }
   &_userId {
-    font-size: 4rem;
+    font-size: 2rem;
     text-align: center;
   }
 }

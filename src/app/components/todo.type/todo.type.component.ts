@@ -7,8 +7,8 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 })
 export class TodoTypeComponent implements OnInit {
 
-  @Input() id: number | undefined;
-  @Output() idChange = new EventEmitter<number>();
+  @Input() userId: number | undefined;
+  @Output() userIdChange = new EventEmitter<number>();
 
   constructor() { }
 

@@ -4,7 +4,7 @@
     <a [class]="todo.completed ? 'completed' : 'incompleted'">
       <ul class="todos_ind_list">
         <li>
-          <app-todo-type [(id)]="todo.id"></app-todo-type>
+          <app-todo-type [(userId)]="todo.userId"></app-todo-type>
           <span class="todos_ind_list_title">{{todo.title}}</span>
         </li>
         <li>
