@@ -6,6 +6,8 @@ import { MessageService } from './message.service';
 
 import { Todo } from '../models/todo.model';
 
+import { firstValueFrom } from 'rxjs';
+
 @Injectable({
   providedIn: 'root'
 })
@@ -26,12 +28,12 @@ export class TodoService {
     this.messageService.add(`HeroService: ${message}`);
   }
 
-  getTodos(): Observable<Todo[]> {
-    return this.http.get<Todo[]>(this.todoUrl)
-      .pipe(
-        tap(_ => this.log('fetched values')),
-        catchError(this.handleError<Todo[]>('getTodos', []))
-      );
+  getTodos(): Promise<Todo[]> {
+    return firstValueFrom(this.http.get<Todo[]>(this.todoUrl))
+      // .pipe(
+      //   tap(_ => this.log('fetched values')),
+      //   catchError(this.handleError<Todo[]>('getTodos', []))
+      // );
   }
 
   private handleError<T>(operation = 'operation', result?: T) {

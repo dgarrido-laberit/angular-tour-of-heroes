@@ -4,65 +4,70 @@
   list-style-type: none;
   padding: 0;
   width: 15em;
-}
-.todos_ind {
-  position: relative;
-  cursor: pointer;
-}
 
-.todos_ind:hover {
-  left: .1em;
-}
-
-.todos div {
-  color: #333;
-  text-decoration: none;
-  margin: .5em;
-  padding: .5em .3em 0;
-  height: 10em;
-  border-radius: 4px;
-  display: block;
-  width: 200%;
-  border-width: 2px;
-  border-style: solid;
-  border-color: black;
-  overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-}
-
-.todos .completed {
-  background-color: #66ff66;
-}
-
-.todos  .incompleted{
-  background-color: #ff6666;
-}
-
-.todos div:hover {
-  color: #2c3a41;
-  background-color: #e6e6e6;
-}
-
-.todos div:active {
-  background-color: #525252;
-  color: #fafafa;
-}
-
-.todos_ind_list{
-  list-style-type: none;
-  &_title {
-    font-style: italic;
+  .completed {
+    background-color: #66ff66;
   }
-  &_completed {
-    background-color: whitesmoke;
-    color: cornflowerblue;
+
+  .incompleted {
+    background-color: #ff6666;
   }
-  &_id {
-    text-shadow: 0 0.1rem 0.4rem blue;
-  }
-  &_userId {
-    font-size: 2rem;
-    text-align: center;
+
+  &_ind {
+    position: relative;
+    cursor: pointer;
+
+    &:hover {
+      left: .1em;
+    }
+
+    &_container {
+      color: #333;
+      text-decoration: none;
+      margin: .5em;
+      padding: .5em .3em 0;
+      height: 10em;
+      border-radius: 4px;
+      display: block;
+      width: 200%;
+      border-width: 2px;
+      border-style: solid;
+      border-color: black;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+
+      &:hover {
+        color: #2c3a41;
+        background-color: #e6e6e6;
+      }
+
+      &:active {
+        background-color: #525252;
+        color: #fafafa;
+      }
+
+      &_list {
+        list-style-type: none;
+
+        &_title {
+          font-style: italic;
+        }
+
+        &_completed {
+          background-color: whitesmoke;
+          color: cornflowerblue;
+        }
+
+        &_id {
+          text-shadow: 0 0.1rem 0.4rem blue;
+        }
+
+        &_userId {
+          font-size: 2rem;
+          text-align: center;
+        }
+      }
+    }
   }
 }
