@@ -1,9 +1,26 @@
 <h2>ToDos List</h2>
 <div class="todos">
-  <li *ngFor="let todo of todos">
-      <a [class]="todo.completed ? 'completed' : 'incompleted'">
-        {{todo.title}}
-        <app-todo-type [(id)]="todo.id"></app-todo-type>
-      </a>
+  <li *ngFor="let todo of todos" class="todos_ind">
+    <a [class]="todo.completed ? 'completed' : 'incompleted'">
+      <ul class="todos_ind_list">
+        <li>
+          <app-todo-type [(id)]="todo.id"></app-todo-type>
+          <span class="todos_ind_list_title">{{todo.title}}</span>
+        </li>
+        <li>
+          Completed: 
+          <span class="todos_ind_list_completed">{{todo.completed}}</span>
+        </li>
+        <li>
+          Id: 
+          <span class="todos_ind_list_id">{{todo.id}}</span>
+        </li>
+        <li>
+          UserId: 
+          <span class="todos_ind_list_userId">{{todo.userId}} </span>
+          <img src="\assets\img\user.png" width="50">
+        </li>
+      </ul>
+    </a>
   </li>
 </div>

@@ -5,12 +5,12 @@
   padding: 0;
   width: 15em;
 }
-.todos li {
+.todos_ind {
   position: relative;
   cursor: pointer;
 }
 
-.todos li:hover {
+.todos_ind:hover {
   left: .1em;
 }
 
@@ -19,13 +19,16 @@
   text-decoration: none;
   margin: .5em;
   padding: .5em .3em 0;
-  height: 1.6em;
+  height: 10em;
   border-radius: 4px;
   display: block;
   width: 200%;
   border-width: 2px;
   border-style: solid;
   border-color: black;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
 
 .todos .completed {
@@ -44,4 +47,22 @@
 .todos a:active {
   background-color: #525252;
   color: #fafafa;
+}
+
+.todos_ind_list{
+  list-style-type: armenian;
+  &_title {
+    font-style: italic;
+  }
+  &_completed {
+    background-color: whitesmoke;
+    color: cornflowerblue;
+  }
+  &_id {
+    text-shadow: 0 0.1rem 0.4rem blue;
+  }
+  &_userId {
+    font-size: 4rem;
+    text-align: center;
+  }
 }
