@@ -4,7 +4,7 @@
     <div class="todos-page_ind_container" [class]="todo.completed ? 'completed' : 'incompleted'">
       <ul class="todos-page_ind_container_list">
         <li>
-          <app-todo-card [(userId)]="todo.userId"></app-todo-card>
+          <app-todo-card [todo]="todo"></app-todo-card>
           <span class="todos-page_ind_container_list_title"> - {{todo.title}}</span>
         </li>
         <li>
