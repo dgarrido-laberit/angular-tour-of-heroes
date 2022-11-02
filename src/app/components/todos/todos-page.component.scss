@@ -5,14 +5,6 @@
   padding: 0;
   width: 15em;
 
-  .completed {
-    background-color: #66ff66;
-  }
-
-  .incompleted {
-    background-color: #ff6666;
-  }
-
   &_ind {
     position: relative;
     cursor: pointer;
@@ -70,4 +62,12 @@
       }
     }
   }
+}
+
+.completed {
+  background-color: #66ff66;
+}
+
+.incompleted {
+  background-color: #ff6666;
 }
