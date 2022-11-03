@@ -5,7 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './components/app/app.component';
 import { HeroesComponent } from './components/heroes/heroes.component';
 
-import { FormsModule } from '@angular/forms';
+// import { FormsModule } from '@angular/forms';
 import { HeroDetailComponent } from './components/hero-detail/hero-detail.component';
 import { LabelComponent } from './components/label/label.component';
 import { MessagesComponent } from './components/messages/messages.component';
@@ -35,7 +35,7 @@ import { SharedModule } from './shared/shared.module';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule,
+    // FormsModule,
     CommonModule,
     HttpClientModule,
     HttpClientInMemoryWebApiModule.forRoot(
