@@ -1,0 +1,25 @@
+<div class="container" [class]="completed ? 'completed' : 'incompleted'">
+  <!-- <div class="container" [class]="{completed: completed, incompleted: !completed}"> -->
+  <ul class="container_list">
+    <li>
+      <span *ngIf="userId" class="etiqueta">
+        <span
+          *ngIf="userId === todoTypes.ADMIN || userId === todoTypes.MODER">{{todoTypeNames[userId]}}</span>
+      </span>
+      <span class="container_list_title"> - {{title}}</span>
+    </li>
+    <li>
+      Completed:
+      <span class="container_list_completed">{{completed}}</span>
+    </li>
+    <li>
+      Id:
+      <span class="container_list_id">{{id}}</span>
+    </li>
+    <li>
+      UserId:
+      <span class="container_list_userId">{{userId}} </span>
+      <img src="\assets\img\user.png" width="50">
+    </li>
+  </ul>
+</div>

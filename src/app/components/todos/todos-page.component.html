@@ -2,7 +2,8 @@
   <h2>ToDos List</h2>
   <div class="flex-container">
     <li *ngFor="let todo of todos" class="flex-container_todo" style="list-style-type: none;">
-      <app-todo-card [todo]="todo"></app-todo-card>
+      <!-- <app-todo [todo]="todo"></app-todo> -->
+      <app-todo [(userId)]="todo.userId" [(id)]="todo.id" [(title)]="todo.title" [(completed)]="todo.completed"></app-todo>
     </li>
   </div>
 </div>

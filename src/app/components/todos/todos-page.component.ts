@@ -8,7 +8,7 @@ import { TodoService } from 'src/app/services/todo.service';
   templateUrl: './todos-page.component.html',
   styleUrls: ['./todos-page.component.scss']
 })
-export class TodosComponent implements OnInit {
+export class TodosPageComponent implements OnInit {
   
   todos: Todo[] = [];
   

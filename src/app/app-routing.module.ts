@@ -3,7 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { HeroesComponent } from './components/heroes/heroes.component'; 
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { HeroDetailComponent } from './components/hero-detail/hero-detail.component';
-import { TodosComponent } from './components/todos/todos-page.component';
+import { TodosPageComponent } from './components/todos/todos-page.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
@@ -11,7 +11,7 @@ const routes: Routes = [
   { path: 'dashboard', component: DashboardComponent },
   { path: 'heroes', component: HeroesComponent },
   { path: 'detail/:id', component: HeroDetailComponent },
-  { path: 'todos', component: TodosComponent },
+  { path: 'todos', component: TodosPageComponent },
 
   {path: '**', redirectTo: '', pathMatch: 'full'}, //Ruta cuando te equivocas de url (tiene que ir al final)
 ];
