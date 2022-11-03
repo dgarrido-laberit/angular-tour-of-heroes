@@ -8,7 +8,7 @@ import { AppComponent } from './components/app/app.component';
 // import { FormsModule } from '@angular/forms';
 // import { HeroDetailComponent } from './heroes/components/hero-detail/hero-detail.component';
 // import { LabelComponent } from './components/label/label.component';
-import { MessagesComponent } from './components/messages/messages.component';
+// import { MessagesComponent } from './components/messages/messages.component';
 
 import { CommonModule } from '@angular/common';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
@@ -28,7 +28,7 @@ import { HeroesModule } from './heroes/heroes.module';
     // HeroesComponent,
     // HeroDetailComponent,
     // LabelComponent,
-    MessagesComponent,
+    // MessagesComponent,
     DashboardComponent,
     // HeroTypeComponent,
     HeroSearchComponent,
