@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 import { TasksRoutingModule } from './tasks-routing.module';
 import { TodoComponent } from './components/todo/todo.component';
 import { TodosPageComponent } from './components/todos/todos-page.component';
+import { SharedModule } from '../shared/shared.module';
 
 
 @NgModule({
@@ -13,7 +14,8 @@ import { TodosPageComponent } from './components/todos/todos-page.component';
   ],
   imports: [
     CommonModule,
-    TasksRoutingModule
+    TasksRoutingModule,
+    SharedModule
   ]
 })
 export class TasksModule { }

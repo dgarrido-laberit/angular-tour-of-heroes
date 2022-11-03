@@ -16,9 +16,10 @@ import { HeroTypeComponent } from './components/hero-type/hero-type.component';
 
 import { HttpClientModule } from '@angular/common/http';
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
-import { InMemoryDataService } from './services/in-memory-data.service';
+import { InMemoryDataService } from './shared/services/in-memory-data.service';
 import { HeroSearchComponent } from './components/hero-search/hero-search.component';
 import { TasksModule } from './tasks/tasks.module';
+import { SharedModule } from './shared/shared.module';
 
 @NgModule({
   declarations: [
@@ -40,7 +41,8 @@ import { TasksModule } from './tasks/tasks.module';
     HttpClientInMemoryWebApiModule.forRoot(
       InMemoryDataService, { dataEncapsulation: false }
     ),
-    TasksModule
+    TasksModule,
+    SharedModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

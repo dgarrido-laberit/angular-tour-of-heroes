@@ -4,7 +4,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { catchError, Observable, of, tap } from 'rxjs';
 import { MessageService } from './message.service';
 
-import { Todo } from '../tasks/models/todo.model';
+import { Todo } from '../../tasks/models/todo.model';
 
 import { firstValueFrom } from 'rxjs';
 
