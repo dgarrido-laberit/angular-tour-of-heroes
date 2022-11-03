@@ -3,15 +3,13 @@ import { CommonModule } from '@angular/common';
 
 import { InitialRoutingModule } from './initial-routing.module';
 import { SharedModule } from '../shared/shared.module';
-import { MessagesComponent } from './messages/messages.component';
-import { DashboardComponent } from './dashboard/dashboard.component';
-import { HeroSearchComponent } from './hero-search/hero-search.component';
-import { AppComponent } from './app/app.component';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { HeroSearchComponent } from './components/hero-search/hero-search.component';
+import { AppComponent } from './components/app/app.component';
 
 
 @NgModule({
   declarations: [
-    MessagesComponent,
     DashboardComponent,
     HeroSearchComponent,
     AppComponent,
