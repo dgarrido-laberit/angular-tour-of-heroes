@@ -19,7 +19,7 @@ import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryDataService } from './services/in-memory-data.service';
 import { HeroSearchComponent } from './components/hero-search/hero-search.component';
 import { TodosPageComponent } from './components/todos/todos-page.component';
-import { TodoComponent } from './components/todo/todo.component';
+import { TodoComponent } from './tasks/components/todo/todo.component';
 
 @NgModule({
   declarations: [

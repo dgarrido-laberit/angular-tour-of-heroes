@@ -3,7 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { HeroesComponent } from './components/heroes/heroes.component'; 
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { HeroDetailComponent } from './components/hero-detail/hero-detail.component';
-import { TodosPageComponent } from './components/todos/todos-page.component';
+import { TodosPageComponent } from './tasks/components/todos/todos-page.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
