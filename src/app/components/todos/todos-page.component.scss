@@ -20,8 +20,14 @@
   flex-flow: row;
   flex-wrap: wrap;
   background-color: rgb(220, 240, 245);
-  justify-content: space-around;
+  justify-content: left;
+  // justify-content: space-around;
   border-radius: 2rem;
   margin: 0 auto;
   padding: 2rem;
+
+  &_todo {
+    width: 33%;
+    box-sizing: border-box;
+  }
 }
