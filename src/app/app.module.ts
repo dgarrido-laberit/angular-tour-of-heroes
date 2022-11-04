@@ -18,7 +18,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryDataService } from './shared/services/in-memory-data.service';
 import { HeroSearchComponent } from './components/hero-search/hero-search.component';
-import { TasksModule } from './tasks/tasks.module';
+import { TasksModule } from './tasks/tasks.module'; 
 import { SharedModule } from './shared/shared.module';
 import { HeroesModule } from './heroes/heroes.module';
 
