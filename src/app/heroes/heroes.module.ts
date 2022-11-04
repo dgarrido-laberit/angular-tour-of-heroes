@@ -8,6 +8,7 @@ import { HeroDetailComponent } from './components/hero-detail/hero-detail.compon
 import { HeroTypeComponent } from './components/hero-type/hero-type.component';
 import { LabelComponent } from './components/label/label.component';
 import { HeroesComponent } from './components/heroes/heroes.component';
+import { HeroSearchComponent } from './components/hero-search/hero-search.component';
 
 
 @NgModule({
@@ -16,11 +17,15 @@ import { HeroesComponent } from './components/heroes/heroes.component';
     HeroTypeComponent,
     HeroesComponent,
     LabelComponent,
+    HeroSearchComponent,
   ],
   imports: [
     CommonModule,
     HeroesRoutingModule,
     SharedModule,
-  ]
+  ],
+  exports: [
+    HeroSearchComponent,
+  ],
 })
 export class HeroesModule { }
