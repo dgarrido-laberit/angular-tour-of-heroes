@@ -22,14 +22,17 @@ export class HeroesComponent implements OnInit {
   // heroes = HEROES;
   heroes: Hero[] = [];
 
+  
   // heroTypes = heroTypes;
   // heroTypeNames = heroTypeNames;
-
+  
   // selectedHero: Hero;
-
+  
   name = 'hero';
-
+  
   users: User[];
+  
+  newHero = new Hero();
 
   // users = [
   //   {name: "hola"}
@@ -94,6 +97,11 @@ export class HeroesComponent implements OnInit {
   delete(hero: Hero): void {
     this.heroes = this.heroes.filter(h => h !== hero);
     this.heroService.deleteHero(hero.id).subscribe();
+  }
+
+  onClickAddHero(): void {
+    this.add(this.newHero.name);
+    this.newHero.name='';
   }
 
 }

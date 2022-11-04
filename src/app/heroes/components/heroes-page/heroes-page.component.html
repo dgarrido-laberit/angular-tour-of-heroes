@@ -1,23 +1,23 @@
 <h2>My Heroes</h2>
 <div>
-  <label for="new-hero">Hero name: </label>
-  <input id="new-hero" #heroName />
+  <form id="heroesCreateForm" name="heroesCreateForm">
+    <label for="new-hero">Hero name: </label>
+    <input id="new-hero" name="new-hero" [(ngModel)]="newHero.name"/>
 
-  <!-- (click) passes input value to add() and then clears the input -->
-  <button type="button" class="add-button"
-    (click)="add(heroName.value); heroName.value=''">Add hero</button>
+    <!-- (click) passes input value to add() and then clears the input -->
+    <button type="button" class="add-button" (click)="onClickAddHero()">Add hero</button>
+  </form>
 </div>
 
 <ul class="heroes">
   <li *ngFor="let hero of heroes">
-    <a routerLink="/detail/{{hero.id}}">
+    <a routerLink="/heroes/detail/{{hero.id}}">
       <span class="badge">{{hero.id}}</span> {{hero.name}}
       <!-- <span *ngIf="hero.typeId"> - {{heroTypeNames[hero.typeId]}}</span> -->
       <span *ngIf="hero.typeId"> - </span>
       <app-hero-type [(typeId)]="hero.typeId"></app-hero-type>
     </a>
-    <button type="button" class="delete" title="delete hero"
-        (click)="delete(hero)">x</button>
+    <button type="button" class="delete" title="delete hero" (click)="delete(hero)">x</button>
     <app-label [(text)]="hero.name"></app-label>
     <!-- <app-label [text]="hero.name" (textChange)="onChangeTextParent($event, hero)"></app-label> -->
     <!-- <app-label [text]="hero.name" (textChange)="hero.name = $event"></app-label> -->
