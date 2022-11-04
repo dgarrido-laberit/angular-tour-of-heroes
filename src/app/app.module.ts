@@ -31,7 +31,7 @@ import { AppComponent } from './initial/components/app/app.component';
     // HeroDetailComponent,
     // LabelComponent,
     // MessagesComponent,
-    // DashboardComponent,
+    DashboardComponent,
     // HeroTypeComponent,
     // HeroSearchComponent,
   ],
