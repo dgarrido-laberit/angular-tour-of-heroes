@@ -7,9 +7,11 @@ import { UserService } from '../../../shared/services/user.service';
 
 import { User } from '../../models/users.model';
 
-import { MessageService } from '../../../shared/services/message.service';
+// import { MessageService } from '../../../shared/services/message.service';
 
 // import { heroTypes, heroTypeNames } from '../Constants/hero.constants';
+
+import { FormBuilder, Validators } from '@angular/forms';
 
 
 @Component({
@@ -22,16 +24,16 @@ export class HeroesComponent implements OnInit {
   // heroes = HEROES;
   heroes: Hero[] = [];
 
-  
+
   // heroTypes = heroTypes;
   // heroTypeNames = heroTypeNames;
-  
+
   // selectedHero: Hero;
-  
+
   name = 'hero';
-  
+
   users: User[];
-  
+
   newHero = new Hero();
 
   // users = [
@@ -39,23 +41,33 @@ export class HeroesComponent implements OnInit {
   // ];
 
   // constructor(private heroService: HeroService, private messageService: MessageService, private userService: UserService) { }
-  constructor(private heroService: HeroService, private userService: UserService) { }
+  constructor(
+    private heroService: HeroService,
+    private userService: UserService,
+    private formBuilder: FormBuilder,
+  ) { }
+
+  checkoutForm = this.formBuilder.group(
+    {
+      name: ['', Validators.required],
+    }
+  );
 
   ngOnInit(): void {
     this.getHeroes();
 
     this.getUsersPromiseAsync();
-  }  
+  }
 
   // Versión 1 - A veces se usará
-  getUsers (): void {
+  getUsers(): void {
     this.userService.getUsers().subscribe(data => {
       this.users = data;
     });
   }
 
   // // // Versión 2 - no recomendable (mejor usar promesas con async / await en vez de .then)
-  getUsersPromise (): void {
+  getUsersPromise(): void {
     this.userService.getUsersPromise().then(data => {
       this.users = data;
     });
@@ -63,25 +75,25 @@ export class HeroesComponent implements OnInit {
 
   // // // Versión 3 - recomendable
   // async / await
-  async getUsersPromiseAsync (): Promise<void> {
+  async getUsersPromiseAsync(): Promise<void> {
     this.users = await this.userService.getUsersPromiseAsync();
   }
-  
+
   // onSelect(hero: Hero): void {
   //   this.selectedHero = hero;
   //   this.messageService.add(`HeroesComponent: Selected hero id=${hero.id}`);
   // } 
-  
+
   // onChangeTextParent (text: string, hero : Hero): void {
   //   console.log("P: " + text);
   //   hero.name = text;
   // }
-  
+
   // getHeroes(): void {
   //   this.heroes = this.heroService.getHeroes();
   // }
 
-  
+
   getHeroes(): void {
     this.heroService.getHeroes().subscribe(heroes =>
       this.heroes = heroes);
@@ -90,8 +102,8 @@ export class HeroesComponent implements OnInit {
   add(name: string): void {
     name = name.trim();
     if (!name) { return; }
-    this.heroService.addHero({name} as Hero)
-      .subscribe(hero => { this.heroes.push(hero);});
+    this.heroService.addHero({ name } as Hero)
+      .subscribe(hero => { this.heroes.push(hero); });
   }
 
   delete(hero: Hero): void {
@@ -99,9 +111,18 @@ export class HeroesComponent implements OnInit {
     this.heroService.deleteHero(hero.id).subscribe();
   }
 
-  onClickAddHero(): void {
-    this.add(this.newHero.name);
-    this.newHero.name='';
+  // onClickAddHero(): void {
+  //   this.add(this.newHero.name);
+  //   this.newHero.name = '';
+  // }
+
+  onSubmit(): void {
+    if (this.checkoutForm.value.name) {
+      this.add(this.checkoutForm.value.name);
+      console.warn('Your order has been submitted', this.checkoutForm.value);
+      this.checkoutForm.reset();
+    }
+    
   }
 
 }

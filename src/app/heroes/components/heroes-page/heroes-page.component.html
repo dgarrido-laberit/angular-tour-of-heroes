@@ -1,11 +1,13 @@
 <h2>My Heroes</h2>
 <div>
-  <form id="heroesCreateForm" name="heroesCreateForm">
+  <form id="heroesCreateForm" name="heroesCreateForm" [formGroup]="checkoutForm" (ngSubmit)="onSubmit()">
     <label for="new-hero">Hero name: </label>
-    <input id="new-hero" name="new-hero" [(ngModel)]="newHero.name"/>
+    <!-- <input id="new-hero" name="new-hero" [(ngModel)]="newHero.name"/> -->
+    <!-- <input id="new-hero" name="new-hero" [(ngModel)]="newHero.name" type="text" formControlName="name"> -->
+    <input id="new-hero" type="text" formControlName="name">
 
     <!-- (click) passes input value to add() and then clears the input -->
-    <button type="button" class="add-button" (click)="onClickAddHero()">Add hero</button>
+    <button type="submit" class="add-button" [disabled]="!checkoutForm.valid">Add hero</button>
   </form>
 </div>
 

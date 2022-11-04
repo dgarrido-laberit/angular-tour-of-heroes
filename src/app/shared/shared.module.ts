@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MessagesComponent } from './components/messages/messages.component';
 
 
@@ -12,10 +12,12 @@ import { MessagesComponent } from './components/messages/messages.component';
   imports: [
     CommonModule,
     FormsModule,
+    ReactiveFormsModule,
   ],
   exports: [
     FormsModule,
     MessagesComponent,
+    ReactiveFormsModule,
   ],
 })
 export class SharedModule { }
