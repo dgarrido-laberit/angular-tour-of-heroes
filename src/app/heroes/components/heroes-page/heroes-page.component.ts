@@ -13,9 +13,9 @@ import { MessageService } from '../../../shared/services/message.service';
 
 
 @Component({
-  selector: 'app-heroes',
-  templateUrl: './heroes.component.html',
-  styleUrls: ['./heroes.component.scss']
+  selector: 'app-heroes-page',
+  templateUrl: './heroes-page.component.html',
+  styleUrls: ['./heroes-page.component.scss']
 })
 export class HeroesComponent implements OnInit {
 

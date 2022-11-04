@@ -7,7 +7,7 @@ import { SharedModule } from '../shared/shared.module';
 import { HeroDetailComponent } from './components/hero-detail/hero-detail.component';
 import { HeroTypeComponent } from './components/hero-type/hero-type.component';
 import { LabelComponent } from './components/label/label.component';
-import { HeroesComponent } from './components/heroes/heroes.component';
+import { HeroesComponent } from './components/heroes-page/heroes-page.component';
 import { HeroSearchComponent } from './components/hero-search/hero-search.component';
 
 
