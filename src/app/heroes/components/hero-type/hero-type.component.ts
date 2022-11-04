@@ -1,6 +1,6 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
-import { heroTypes, heroTypeNames } from '../../constants/hero.constants';
+import { heroTypeNames } from 'src/app/heroes/constants/hero.constants';
 
 @Component({
   selector: 'app-hero-type',

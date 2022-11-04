@@ -4,7 +4,7 @@ import { Hero } from '../../models/hero.model';
 import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
 
-import { HeroService } from '../../shared/services/hero.service';
+import { HeroService } from '../../../shared/services/hero.service';
 
 @Component({
   selector: 'app-hero-detail',

@@ -1,13 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { Hero } from '../../models/hero.model'
 // import { HEROES } from '../mock-heroes';
-import { HeroService } from '../../shared/services/hero.service';
+import { HeroService } from '../../../shared/services/hero.service';
 // import { HttpClient } from '@angular/common/http';
-import { UserService } from '../../shared/services/user.service';
+import { UserService } from '../../../shared/services/user.service';
 
 import { User } from '../../models/users.model';
 
-import { MessageService } from '../../shared/services/message.service';
+import { MessageService } from '../../../shared/services/message.service';
 
 // import { heroTypes, heroTypeNames } from '../Constants/hero.constants';
 
