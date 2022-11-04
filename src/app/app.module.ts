@@ -22,7 +22,7 @@ import { TasksModule } from './tasks/tasks.module';
 import { SharedModule } from './shared/shared.module';
 import { HeroesModule } from './heroes/heroes.module';
 import { InitialModule } from './initial/initial.module';
-import { AppComponent } from './initial/components/app/app.component';
+import { AppComponent } from './initial/app/app.component';
 
 @NgModule({
   declarations: [
