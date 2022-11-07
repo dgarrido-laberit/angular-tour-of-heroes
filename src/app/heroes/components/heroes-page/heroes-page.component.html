@@ -18,9 +18,10 @@
     </form>
     <ng-template pTemplate="footer">
       <!-- <p-button icon="pi pi-times" (click)="closeModalDialog()" label="Cancel" styleClass="p-button-text"></p-button> -->
-      <button pButton pRipple label="Cancel" icon="pi pi-times" (click)="closeModalDialog()"></button>
-      <button pButton pRipple label="Add Hero" icon="pi pi-times" (click)="onSubmitHero()"
-        [disabled]="heroesCreateForm.invalid"></button>
+      <button pButton pRipple label="Cancel" icon="pi pi-times" (click)="closeModalDialog()"
+      class="p-button-rounded"></button>
+      <button pButton pRipple label="Add Hero" icon="pi pi-check" (click)="onSubmitHero()"
+        [disabled]="heroesCreateForm.invalid" class="p-button-rounded p-button-success"></button>
       <!-- <p-button icon="pi pi-check" (click)="onSubmitHero()" label="Add Hero" styleClass="p-button-text"></p-button> -->
     </ng-template>
   </p-dialog>
