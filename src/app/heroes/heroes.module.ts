@@ -12,6 +12,11 @@ import { HeroSearchComponent } from './components/hero-search/hero-search.compon
 import { DialogModule } from 'primeng/dialog';
 import { TabViewModule } from 'primeng/tabview';
 import { ButtonModule } from 'primeng/button';
+import { InputTextModule } from 'primeng/inputtext';
+import {MessagesModule} from 'primeng/messages';
+import {MessageModule} from 'primeng/message';
+
+
 
 
 @NgModule({
@@ -29,6 +34,9 @@ import { ButtonModule } from 'primeng/button';
     DialogModule,
     TabViewModule,
     ButtonModule,
+    InputTextModule,
+    MessagesModule,
+    MessageModule,
   ],
   exports: [
     HeroSearchComponent,

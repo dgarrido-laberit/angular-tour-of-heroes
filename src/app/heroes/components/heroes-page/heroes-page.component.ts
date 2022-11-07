@@ -15,6 +15,8 @@ import { FormBuilder, NgForm, NgModel, Validators } from '@angular/forms';
 
 // import { ModelComponent } from '../../models/model-component.model';
 
+import { Message, MessageService } from 'primeng/api';
+
 
 @Component({
   selector: 'app-heroes-page',
@@ -28,14 +30,9 @@ export class HeroesComponent implements OnInit {
   // heroes = HEROES;
   heroes: Hero[] = [];
 
-  display: boolean = false;
+  msgs1: Message[];
 
-  showDialog() {
-    this.display = true;
-  }
-
-
-
+  displayModal: boolean = false;
 
   // heroTypes = heroTypes;
   // heroTypeNames = heroTypeNames;
@@ -56,6 +53,7 @@ export class HeroesComponent implements OnInit {
   constructor(
     private heroService: HeroService,
     private userService: UserService,
+    // private messageService: MessageService,
     // private formBuilder: FormBuilder,
   ) { }
 
@@ -137,10 +135,55 @@ export class HeroesComponent implements OnInit {
 
   // }
 
-  onSubmitHero(): void {
-    this.add(this.newHero.name);
-    // this.newHero.name = '';
-    this.heroesCreateForm.resetForm();
+  // onSubmitHero(): void {
+  //   if (!this.newHero.name) return;
+  //   // this.newHero.name = '';
+  //   this.heroesCreateForm.resetForm();
+  //   this.add(this.newHero.name);
+  // }
+
+  showModalDialog() {
+    this.displayModal = true;
+    this.clearMessages();
   }
+
+  closeModalDialog() {
+    this.displayModal = false;
+    this.heroesCreateForm.resetForm();
+    this.addMessages2();
+    // this.showViaService();
+  }
+
+  onSubmitHero(): void {
+    if (!this.newHero.name) return;
+
+    this.add(this.newHero.name);
+    this.displayModal = false;
+    this.addMessages1();
+    this.heroesCreateForm.resetForm();
+    // this.showViaService();
+  }
+
+  addMessages1() {
+    this.msgs1 = [
+      { severity: 'success', summary: 'Success:', detail:`Hero "${this.newHero.name}" added!` },
+    ];
+  }
+
+  addMessages2() {
+    this.msgs1 = [
+      { severity: 'info', summary: 'Info:', detail: 'Operation canceled!' },
+    ];
+  }
+
+  clearMessages() {
+    this.msgs1 = [];
+  }
+
+  // showViaService() {
+  //   this.msgs1.forEach(element => {
+  //     this.messageService.add(element); 
+  //   });
+  // }
 
 }

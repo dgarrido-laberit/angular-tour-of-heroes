@@ -1,40 +1,72 @@
 <h2>My Heroes</h2>
+
+
 <div>
-
-
-  <p-dialog header="Title" [(visible)]="display">
+  <!-- <p-dialog header="Title" [(visible)]="display" [breakpoints]="{'960px': '75vw', '640px': '100vw'}"
+    [style]="{width: '50vw'}">
     Content
+  </p-dialog> -->
+
+  <!-- <button type="button" (click)="showDialog()" icon="pi pi-info-circle" label="Show">Add Heroes</button> -->
+
+  <p-button (click)="showModalDialog()" icon="pi pi-arrow-right" iconPos="right" label="Add Heroes"></p-button>
+  <p-dialog header="Header" [(visible)]="displayModal" [modal]="true" [style]="{width: '50vw'}" [draggable]="false"
+    [resizable]="false">
+    <form #heroesCreateForm="ngForm" id="heroesCreateForm" name="heroesCreateForm" (ngSubmit)="onSubmitHero()">
+      <label id="new-hero-label" for="new-hero">Hero name: </label>
+      <input id="new-hero" name="new-hero" [(ngModel)]="newHero.name" pInputText required="" />
+    </form>
+    <ng-template pTemplate="footer">
+      <!-- <p-button icon="pi pi-times" (click)="closeModalDialog()" label="Cancel" styleClass="p-button-text"></p-button> -->
+      <button pButton pRipple label="Cancel" icon="pi pi-times" (click)="closeModalDialog()"></button>
+      <button pButton pRipple label="Add Hero" icon="pi pi-times" (click)="onSubmitHero()"
+        [disabled]="heroesCreateForm.invalid"></button>
+      <!-- <p-button icon="pi pi-check" (click)="onSubmitHero()" label="Add Hero" styleClass="p-button-text"></p-button> -->
+    </ng-template>
   </p-dialog>
 
-  <button type="button" (click)="showDialog()" icon="pi pi-info-circle" label="Show"></button>
+  <p-messages [(value)]="msgs1" [enableService]="false"></p-messages>
 
-  <!-- <form id="heroesCreateForm" name="heroesCreateForm" [formGroup]="checkoutForm" (ngSubmit)="onSubmit()"> -->
-  <form #heroesCreateForm="ngForm" id="heroesCreateForm" name="heroesCreateForm" (ngSubmit)="onSubmitHero()">
-    <label for="new-hero">Hero name: </label>
-    <input id="new-hero" name="new-hero" [(ngModel)]="newHero.name" required="" />
-    <!-- <input id="new-hero" name="new-hero" [(ngModel)]="newHero.name" type="text" formControlName="name"> -->
-    <!-- <input id="new-hero" type="text" formControlName="name"> -->
-
-    <!-- (click) passes input value to add() and then clears the input -->
-    <!-- <button type="submit" class="add-button" [disabled]="!checkoutForm.valid">Add hero</button> -->
-    <button type="submit" class="add-button" [disabled]="heroesCreateForm.invalid">Add hero</button>
-  </form>
 </div>
 
-<ul class="heroes">
-  <li *ngFor="let hero of heroes">
-    <a routerLink="/heroes/detail/{{hero.id}}">
-      <span class="badge">{{hero.id}}</span> {{hero.name}}
-      <!-- <span *ngIf="hero.typeId"> - {{heroTypeNames[hero.typeId]}}</span> -->
-      <span *ngIf="hero.typeId"> - </span>
-      <app-hero-type [(typeId)]="hero.typeId"></app-hero-type>
-    </a>
-    <button type="button" class="delete" title="delete hero" (click)="delete(hero)">x</button>
-    <app-label [(text)]="hero.name"></app-label>
-    <!-- <app-label [text]="hero.name" (textChange)="onChangeTextParent($event, hero)"></app-label> -->
-    <!-- <app-label [text]="hero.name" (textChange)="hero.name = $event"></app-label> -->
-  </li>
-</ul>
+<!-- <div> -->
+<!-- <form id="heroesCreateForm" name="heroesCreateForm" [formGroup]="checkoutForm" (ngSubmit)="onSubmit()"> -->
+<!-- <form #heroesCreateForm="ngForm" id="heroesCreateForm" name="heroesCreateForm" (ngSubmit)="onSubmitHero()"> -->
+<!-- <label for="new-hero">Hero name: </label> -->
+<!-- <input id="new-hero" name="new-hero" [(ngModel)]="newHero.name" required="" /> -->
+<!-- <input id="new-hero" name="new-hero" [(ngModel)]="newHero.name" type="text" formControlName="name"> -->
+<!-- <input id="new-hero" type="text" formControlName="name"> -->
+
+<!-- (click) passes input value to add() and then clears the input -->
+<!-- <button type="submit" class="add-button" [disabled]="!checkoutForm.valid">Add hero</button> -->
+<!-- <button type="submit" class="add-button" [disabled]="heroesCreateForm.invalid">Add hero</button> -->
+<!-- </form> -->
+<!-- </div> -->
+
+<!-- <div>
+    <form #heroesCreateForm="ngForm" id="heroesCreateForm" name="heroesCreateForm" (ngSubmit)="onSubmitHero()">
+      <label for="new-hero">Hero name: </label>
+      <input id="new-hero" name="new-hero" [(ngModel)]="newHero.name" required="" />
+      <button type="submit" class="add-button" [disabled]="heroesCreateForm.invalid">Add hero</button>
+    </form>
+  </div> -->
+
+<div>
+  <ul class="heroes">
+    <li *ngFor="let hero of heroes">
+      <a routerLink="/heroes/detail/{{hero.id}}">
+        <span class="badge">{{hero.id}}</span> {{hero.name}}
+        <!-- <span *ngIf="hero.typeId"> - {{heroTypeNames[hero.typeId]}}</span> -->
+        <span *ngIf="hero.typeId"> - </span>
+        <app-hero-type [(typeId)]="hero.typeId"></app-hero-type>
+      </a>
+      <button type="button" class="delete" title="delete hero" (click)="delete(hero)">x</button>
+      <app-label [(text)]="hero.name"></app-label>
+      <!-- <app-label [text]="hero.name" (textChange)="onChangeTextParent($event, hero)"></app-label> -->
+      <!-- <app-label [text]="hero.name" (textChange)="hero.name = $event"></app-label> -->
+    </li>
+  </ul>
+</div>
 
 
 <div class="card">
