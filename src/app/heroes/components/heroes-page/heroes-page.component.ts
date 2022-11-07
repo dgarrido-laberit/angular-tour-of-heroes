@@ -150,13 +150,15 @@ export class HeroesComponent implements OnInit {
   closeModalDialog() {
     this.displayModal = false;
     this.addMessages2();
-    // this.heroesCreateForm.resetForm();
+    this.heroesCreateForm.resetForm();
     // this.showViaService();
   }
 
   closeModalDialogHide() {
+    if (this.msgs1.length != 0) return;
+    
+    this.addMessages2();
     this.heroesCreateForm.resetForm();
-    if (this.msgs1.length == 0) this.addMessages2();
     // this.showViaService();
   }
 
