@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { Hero } from '../../models/hero.model'
 // import { HEROES } from '../mock-heroes';
 import { HeroService } from '../../../shared/services/hero.service';
@@ -11,7 +11,7 @@ import { User } from '../../models/users.model';
 
 // import { heroTypes, heroTypeNames } from '../Constants/hero.constants';
 
-import { FormBuilder, Validators } from '@angular/forms';
+import { FormBuilder, NgForm, NgModel, Validators } from '@angular/forms';
 
 
 @Component({
@@ -20,6 +20,8 @@ import { FormBuilder, Validators } from '@angular/forms';
   styleUrls: ['./heroes-page.component.scss']
 })
 export class HeroesComponent implements OnInit {
+
+@ViewChild('heroesCreateForm') heroesCreateForm: NgForm;  
 
   // heroes = HEROES;
   heroes: Hero[] = [];
@@ -116,13 +118,19 @@ export class HeroesComponent implements OnInit {
   //   this.newHero.name = '';
   // }
 
-  onSubmit(): void {
-    if (this.checkoutForm.value.name) {
-      this.add(this.checkoutForm.value.name);
-      console.warn('Your order has been submitted', this.checkoutForm.value);
-      this.checkoutForm.reset();
-    }
+  // onSubmit(): void {
+  //   if (this.checkoutForm.value.name) {
+  //     this.add(this.checkoutForm.value.name);
+  //     console.warn('Your order has been submitted', this.checkoutForm.value);
+  //     this.checkoutForm.reset();
+  //   }
     
+  // }
+
+  onSubmitHero(): void {
+    this.add(this.newHero.name);
+    // this.newHero.name = '';
+    this.heroesCreateForm.resetForm();
   }
 
 }
