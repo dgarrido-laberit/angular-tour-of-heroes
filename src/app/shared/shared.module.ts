@@ -12,12 +12,12 @@ import { MessagesComponent } from './components/messages/messages.component';
   imports: [
     CommonModule,
     FormsModule,
-    ReactiveFormsModule,
+    // ReactiveFormsModule,
   ],
   exports: [
     FormsModule,
     MessagesComponent,
-    ReactiveFormsModule,
+    // ReactiveFormsModule,
   ],
 })
 export class SharedModule { }

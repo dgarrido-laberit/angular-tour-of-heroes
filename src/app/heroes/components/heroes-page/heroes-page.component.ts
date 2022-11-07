@@ -46,14 +46,14 @@ export class HeroesComponent implements OnInit {
   constructor(
     private heroService: HeroService,
     private userService: UserService,
-    private formBuilder: FormBuilder,
+    // private formBuilder: FormBuilder,
   ) { }
 
-  checkoutForm = this.formBuilder.group(
-    {
-      name: ['', Validators.required],
-    }
-  );
+  // checkoutForm = this.formBuilder.group(
+  //   {
+  //     name: ['', Validators.required],
+  //   }
+  // );
 
   ngOnInit(): void {
     this.getHeroes();
