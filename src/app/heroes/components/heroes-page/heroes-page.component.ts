@@ -13,6 +13,8 @@ import { User } from '../../models/users.model';
 
 import { FormBuilder, NgForm, NgModel, Validators } from '@angular/forms';
 
+// import { ModelComponent } from '../../models/model-component.model';
+
 
 @Component({
   selector: 'app-heroes-page',
@@ -21,10 +23,18 @@ import { FormBuilder, NgForm, NgModel, Validators } from '@angular/forms';
 })
 export class HeroesComponent implements OnInit {
 
-@ViewChild('heroesCreateForm') heroesCreateForm: NgForm;  
+  @ViewChild('heroesCreateForm') heroesCreateForm: NgForm;
 
   // heroes = HEROES;
   heroes: Hero[] = [];
+
+  display: boolean = false;
+
+  showDialog() {
+    this.display = true;
+  }
+
+
 
 
   // heroTypes = heroTypes;
@@ -124,7 +134,7 @@ export class HeroesComponent implements OnInit {
   //     console.warn('Your order has been submitted', this.checkoutForm.value);
   //     this.checkoutForm.reset();
   //   }
-    
+
   // }
 
   onSubmitHero(): void {

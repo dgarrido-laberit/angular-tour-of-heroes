@@ -21,6 +21,10 @@ import { InMemoryDataService } from './shared/services/in-memory-data.service';
 import { TasksModule } from './tasks/tasks.module'; 
 import { SharedModule } from './shared/shared.module';
 import { HeroesModule } from './heroes/heroes.module';
+import { AccordionModule } from 'primeng/accordion';
+import { DialogModule } from 'primeng/dialog';
+
+import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 
 @NgModule({
   declarations: [

@@ -9,6 +9,9 @@ import { HeroTypeComponent } from './components/hero-type/hero-type.component';
 import { LabelComponent } from './components/label/label.component';
 import { HeroesComponent } from './components/heroes-page/heroes-page.component';
 import { HeroSearchComponent } from './components/hero-search/hero-search.component';
+import { DialogModule } from 'primeng/dialog';
+import { TabViewModule } from 'primeng/tabview';
+import { ButtonModule } from 'primeng/button';
 
 
 @NgModule({
@@ -23,6 +26,9 @@ import { HeroSearchComponent } from './components/hero-search/hero-search.compon
     CommonModule,
     HeroesRoutingModule,
     SharedModule,
+    DialogModule,
+    TabViewModule,
+    ButtonModule,
   ],
   exports: [
     HeroSearchComponent,

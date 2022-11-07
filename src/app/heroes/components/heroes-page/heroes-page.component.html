@@ -1,9 +1,17 @@
 <h2>My Heroes</h2>
 <div>
+
+
+  <p-dialog header="Title" [(visible)]="display">
+    Content
+  </p-dialog>
+
+  <button type="button" (click)="showDialog()" icon="pi pi-info-circle" label="Show"></button>
+
   <!-- <form id="heroesCreateForm" name="heroesCreateForm" [formGroup]="checkoutForm" (ngSubmit)="onSubmit()"> -->
-    <form #heroesCreateForm="ngForm" id="heroesCreateForm" name="heroesCreateForm" (ngSubmit)="onSubmitHero()">
+  <form #heroesCreateForm="ngForm" id="heroesCreateForm" name="heroesCreateForm" (ngSubmit)="onSubmitHero()">
     <label for="new-hero">Hero name: </label>
-    <input id="new-hero" name="new-hero" [(ngModel)]="newHero.name" required=""/>
+    <input id="new-hero" name="new-hero" [(ngModel)]="newHero.name" required="" />
     <!-- <input id="new-hero" name="new-hero" [(ngModel)]="newHero.name" type="text" formControlName="name"> -->
     <!-- <input id="new-hero" type="text" formControlName="name"> -->
 
