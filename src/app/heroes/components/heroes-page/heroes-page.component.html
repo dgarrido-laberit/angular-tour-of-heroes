@@ -10,8 +10,8 @@
   <!-- <button type="button" (click)="showDialog()" icon="pi pi-info-circle" label="Show">Add Heroes</button> -->
 
   <p-button (click)="showModalDialog()" icon="pi pi-arrow-right" iconPos="right" label="Add Heroes"></p-button>
-  <p-dialog (onHide)="closeModalDialogHide()" header="Header" [(visible)]="displayModal" [modal]="true" [style]="{width: '50vw'}" [draggable]="false"
-    [resizable]="false">
+  <p-dialog (onHide)="closeModalDialogHide()" header="Header" [(visible)]="displayModal" [modal]="true"
+  [style]="{width: '50vw'}" [draggable]="false" [resizable]="false">
     <form #heroesCreateForm="ngForm" id="heroesCreateForm" name="heroesCreateForm" (ngSubmit)="onSubmitHero()">
       <label id="new-hero-label" for="new-hero">Hero name: </label>
       <input id="new-hero" name="new-hero" [(ngModel)]="newHero.name" pInputText required="" />
