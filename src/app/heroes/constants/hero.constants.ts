@@ -10,7 +10,14 @@ const heroTypeNames = {
   [heroTypes.ANIMAL]: 'Animal',
 }
 
+const heroTypeIcon = {
+  [heroTypes.MAGICIAN]:'assets/img/mago.png',
+  [heroTypes.WARRIOR]: 'assets/img/caballero.png',
+  [heroTypes.ANIMAL]: 'assets/img/druida.png',
+}
+
 export {
   heroTypes,
   heroTypeNames,
+  heroTypeIcon,
 };

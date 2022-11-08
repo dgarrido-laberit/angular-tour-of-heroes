@@ -1,6 +1,7 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 import { heroTypeNames } from 'src/app/heroes/constants/hero.constants';
+import { heroTypeIcon } from 'src/app/heroes/constants/hero.constants';
 
 @Component({
   selector: 'app-hero-type',
@@ -11,6 +12,7 @@ export class HeroTypeComponent implements OnInit {
 
   // heroTypes = heroTypes;
   heroTypeNames = heroTypeNames;
+  heroTypeIcon = heroTypeIcon;
 
   @Input() typeId: number | undefined;
   @Output() typeIdChange = new EventEmitter<number>();
