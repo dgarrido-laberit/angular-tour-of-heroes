@@ -3,12 +3,16 @@
   margin: 0 0 2em 0;
   list-style-type: none;
   padding: 0;
+
   // width: 15em;
 }
 
 .heroes li {
   position: relative;
   cursor: pointer;
+  // background-color: rgb(233, 219, 219);
+  // border-radius: 10px;
+  // padding: 10px;
 }
 
 .heroes li:hover {
@@ -25,6 +29,13 @@
   border-radius: 4px;
   display: block;
   // width: 100%;
+}
+
+.hero-card {
+  background-color: rgb(233, 219, 219);
+  border-radius: 10px;
+  padding: .5em;
+  margin: .5em;
 }
 
 .heroes a:hover {
@@ -67,8 +78,8 @@
 
 button.delete {
   position: absolute;
-  left: 210px;
-  top: 5px;
+  right: .5rem;
+  top: .3rem;
   background-color: white;
   color: #525252;
   font-size: 1.1rem;
