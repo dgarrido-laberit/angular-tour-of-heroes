@@ -7,7 +7,7 @@
   --base-color-1: 197, 62%; // Azules apagados
   --color-1: hsla(var(--base-color-1), 50%);
   --color-1-dark: hsla(var(--base-color-1), 40%);
-  --color-1-very-dark: hsla(var(--base-color-1), 25%);
+  --color-1-very-dark: hsla(var(--base-color-1), 20%);
   --color-1-really-dark: hsla(var(--base-color-1), 15%);
   --color-1-ultra-dark: hsla(var(--base-color-1), 10%);
   --color-1-ultra-light: hsla(var(--base-color-1), 90%);
@@ -32,6 +32,7 @@
   --base-color-5: 0, 100%; // Rojos
   --color-5: hsla(var(--base-color-5), 50%);
   --color-5-light: hsla(var(--base-color-5), 70%);
+  --color-5-dark: hsla(var(--base-color-5), 30%);
 
   --base-color-6: 240, 100%; // Azules
   --color-6: hsla(var(--base-color-6), 50%);
