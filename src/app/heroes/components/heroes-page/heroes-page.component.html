@@ -55,14 +55,17 @@
 
 <div class="container-fluid text-center" style="background-color: violet;">
   <div class="row">
-    <div class="col">
-      Column
+    <div class="col-12 col-md-6 col-lg-3">
+      Column1
     </div>
-    <div class="col">
-      Column
+    <div class="col-12 col-md-6 col-lg-3">
+      Column2
     </div>
-    <div class="col">
-      Column
+    <div class="col-12 col-md-6 col-lg-3">
+      Column3
+    </div>
+    <div class="col-12 col-md-6 col-lg-3">
+      Column4
     </div>
   </div>
 </div>
@@ -70,7 +73,7 @@
 <div class="heroes">
   <div class="container-fluid">
     <div class="row">
-      <li *ngFor="let hero of heroes" class="col-sm-12 col-md-6 col-lg-3">
+      <li *ngFor="let hero of heroes" class="col-12 col-md-6 col-lg-3">
         <div class="hero-card">
           <a routerLink="/heroes/detail/{{hero.id}}">
             <span class="badge">{{hero.id}}</span> {{hero.name}}
