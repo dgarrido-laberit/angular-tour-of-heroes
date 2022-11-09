@@ -121,6 +121,10 @@ export class HeroesComponent implements OnInit {
     this.heroService.deleteHero(hero.id).subscribe();
   }
 
+  onClickDelete(hero: Hero) {
+    this.delete(hero);
+  }
+
   // onClickAddHero(): void {
   //   this.add(this.newHero.name);
   //   this.newHero.name = '';
