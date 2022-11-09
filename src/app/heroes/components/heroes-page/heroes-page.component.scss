@@ -9,24 +9,26 @@
     // width: 15em;
 
     &_card {
+      background-color: var(--color-3-really-light);
+      border-radius: 10px;
+      padding: .5em;
+      margin: .5em;
+
       position: relative;
       cursor: pointer;
       // background-color: rgb(233, 219, 219);
       // border-radius: 10px;
       // padding: 10px;
 
+      // display: flex;
+      // justify-content: left;
+      // flex-direction: row;
+      // flex-wrap: wrap;
+      // flex-grow: 1;
+
       &:hover {
         left: .1em;
       }
-    }
-
-    &_card {
-      background-color: var(--color-3-really-light);
-      border-radius: 10px;
-      padding: .5em;
-      margin: .5em;
-      // display: flex;
-      // justify-content-end: left;
 
       &_link {
         color: var(--color-1-really-dark);
