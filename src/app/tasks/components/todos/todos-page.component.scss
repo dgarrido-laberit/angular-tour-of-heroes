@@ -19,7 +19,8 @@
   display: flex;
   flex-flow: row;
   flex-wrap: wrap;
-  background-color: rgb(220, 240, 245);
+  background-color: var(--color-1-ultra-light);
+
   justify-content: left;
   // justify-content: space-around;
   border-radius: 2rem;

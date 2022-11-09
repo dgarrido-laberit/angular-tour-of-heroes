@@ -10,9 +10,11 @@
   --color-1-very-dark: hsla(var(--base-color-1), 25%);
   --color-1-really-dark: hsla(var(--base-color-1), 15%);
   --color-1-ultra-dark: hsla(var(--base-color-1), 10%);
+  --color-1-ultra-light: hsla(var(--base-color-1), 90%);
 
   --base-color-2: 0, 0%; // Grises
   --color-2-white: hsla(var(--base-color-2), 100%);
+  --color-2-almost-white: hsla(var(--base-color-2), 90%);
   --color-2-black: hsla(var(--base-color-2), 0%);
 
   --base-color-3: 14, 15%; // Marron
@@ -22,7 +24,14 @@
 
   --base-color-4: 113, 63%; // 
   --color-4: hsla(var(--base-color-4), 50%);
+  --color-4-light: hsla(var(--base-color-4), 70%);
 
   --base-color-5: 0, 100%;
   --color-5: hsla(var(--base-color-5), 50%);
+  --color-5-light: hsla(var(--base-color-5), 70%);
+
+  --base-color-6: 240, 100%;
+  --color-6: hsla(var(--base-color-6), 50%);
+  --color-6-light: hsla(var(--base-color-6), 70%);
+
 }
