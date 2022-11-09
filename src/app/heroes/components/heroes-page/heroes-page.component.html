@@ -53,7 +53,7 @@
     </form>
   </div> -->
 
-  <div class="container-fluid text-center" style="background-color: violet;">
+  <!-- <div class="container-fluid text-center" style="background-color: violet;">
     <div class="row">
       <div class="col-12 col-md-6 col-lg-3">
         Column1
@@ -68,7 +68,7 @@
         Column4
       </div>
     </div>
-  </div>
+  </div> -->
 
   <div class="heroes-page_container">
     <div class="container-fluid">
@@ -93,14 +93,14 @@
   </div>
 
 
-  <div class="card">
-    <ul class="users">
-      <li *ngFor="let user of users">
+  <div class="users">
+    <ul class="users_list">
+      <li *ngFor="let user of users" class="users_list_element">
         <!-- <app-label [(text)]="user.name"></app-label> -->
-        <div class="name">{{user.name}}</div>
-        <div>{{user.email}}</div>
-        <div>{{user.address?.city}}</div>
-        <div>{{user.id}}</div>
+        <div class="users_list_element_name">{{user.name}}</div>
+        <div class="users_list_element_email">{{user.email}}</div>
+        <div class="users_list_element_adress-city">{{user.address?.city}}</div>
+        <div class="users_list_element_id">{{user.id}}</div>
       </li>
     </ul>
   </div>
