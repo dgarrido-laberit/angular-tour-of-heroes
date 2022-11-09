@@ -6,7 +6,6 @@
     margin: 0 0 2em 0;
     list-style-type: none;
     padding: 0;
-
     // width: 15em;
 
     &_card {
@@ -22,7 +21,7 @@
     }
 
     &_card {
-      background-color: rgb(233, 219, 219);
+      background-color: var(--color-3-really-light);
       border-radius: 10px;
       padding: .5em;
       margin: .5em;
@@ -30,37 +29,37 @@
       // justify-content-end: left;
 
       &_link {
-        color: #333;
+        color: var(--color-1-really-dark);
         text-decoration: none;
         background-color: var(--color-1);
         margin: .5em;
         padding: .3em;
-        height: 1.6em;
+        height: 2em;
         border-radius: 4px;
         display: block;
-
         // width: 100%;
+
         &:hover {
-          color: #2c3a41;
+          color: var(--color-1-ultra-dark);
           background-color: var(--color-1-dark);
         }
 
         &:active {
-          background-color: #525252;
-          color: #fafafa;
+          background-color: var(--color-2-black);
+          color: var(--color-2-white);
         }
 
         &_badge {
           display: inline-block;
           font-size: small;
-          color: white;
+          color: var(--color-2-white);
           padding: 0.8em 0.7em 0 0.7em;
-          background-color: #405061;
+          background-color: var(--color-1-very-dark);
           line-height: 1em;
           position: relative;
-          left: -1px;
-          top: -4px;
-          height: 1.8em;
+          left: -5px;
+          top: -5px;
+          height: 2.5em;
           // min-width: 16px;
           text-align: right;
           margin-right: .8em;
@@ -70,17 +69,19 @@
 
       &_button-delete {
         position: absolute;
-        right: .5rem;
-        top: .3rem;
-        background-color: white;
-        color: #525252;
+        right: 0rem;
+        top: .85rem;
+        background-color: var(--color-2-white);
+        color: var(--color-3-dark);
         font-size: 1.1rem;
         margin: 0;
         padding: 1px 10px 3px 10px;
+        border-radius: 5px;
+        height: 2em;
 
         &:hover {
-          background-color: #525252;
-          color: white;
+          background-color: var(--color-3-dark);
+          color: var(--color-2-white);
         }
       }
     }
@@ -89,7 +90,8 @@
   &_add-hero {
 
     #new-hero-label {
-      color: #0a6784;
+      // color: #0a6784;
+      color: var(--color-1-dark);
       font-weight: bold;
     }
 
@@ -97,23 +99,23 @@
       // padding: .5rem 1.5rem;
       // font-size: 1rem;
       // margin-bottom: 2rem;
-      color: rgb(26, 182, 39);
-      background-color: red;
+      color: var(--color-1-really-dark);
+      background-color: var(--color-1);
 
       &:hover {
-        color: white;
-        background-color: #42545C;
+        color: var(--color-1-ultra-dark);
+        background-color: var(--color-1-dark);
       }
     }
 
     .ng-valid[required],
     .ng-valid.required {
-      border-left: 5px solid #42A948;
+      border-left: 5px solid var(--color-4);
       /* green */
     }
 
     .ng-invalid:not(form) {
-      border-left: 5px solid #a94442;
+      border-left: 5px solid var(--color-5);
       /* red */
     }
   }

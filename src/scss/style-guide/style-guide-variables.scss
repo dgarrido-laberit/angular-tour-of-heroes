@@ -4,8 +4,25 @@
 // }
 
 :root {
-  --base-color-1: 197, 62%;
+  --base-color-1: 197, 62%; // Azules
   --color-1: hsla(var(--base-color-1), 50%);
   --color-1-dark: hsla(var(--base-color-1), 40%);
-  --color-1-light: hsla(var(--base-color-1), 60%);
+  --color-1-very-dark: hsla(var(--base-color-1), 25%);
+  --color-1-really-dark: hsla(var(--base-color-1), 15%);
+  --color-1-ultra-dark: hsla(var(--base-color-1), 10%);
+
+  --base-color-2: 0, 0%; // Grises
+  --color-2-white: hsla(var(--base-color-2), 100%);
+  --color-2-black: hsla(var(--base-color-2), 0%);
+
+  --base-color-3: 14, 15%; // Marron
+  --color-3: hsla(var(--base-color-3), 50%);
+  --color-3-dark: hsla(var(--base-color-3), 28%);
+  --color-3-really-light: hsla(var(--base-color-3), 80%);
+
+  --base-color-4: 113, 63%; // 
+  --color-4: hsla(var(--base-color-4), 50%);
+
+  --base-color-5: 0, 100%;
+  --color-5: hsla(var(--base-color-5), 50%);
 }
