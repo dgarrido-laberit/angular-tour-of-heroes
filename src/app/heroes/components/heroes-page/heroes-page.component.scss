@@ -89,6 +89,23 @@
     }
   }
 
+  &_table {
+
+    &_body {
+
+      &_tr {
+        
+        &_dark {
+          background-color: var(--color-2-almost-white);
+        }
+
+        &_light {
+          background-color: var(--color-2-gray-light);
+        }
+      }
+    }
+  }
+
   &_add {
 
     #new-hero-label {

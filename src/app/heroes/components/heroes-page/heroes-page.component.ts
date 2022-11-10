@@ -21,7 +21,22 @@ import { Message, MessageService } from 'primeng/api';
 @Component({
   selector: 'app-heroes-page',
   templateUrl: './heroes-page.component.html',
-  styleUrls: ['./heroes-page.component.scss']
+  styleUrls: ['./heroes-page.component.scss'],
+  styles: [
+    `
+        :host ::ng-deep .p-datatable > .p-datatable-wrapper {
+            overflow: visible;
+        }
+        :host ::ng-deep .p-datatable .p-datatable-thead > tr > th {
+            position: -webkit-sticky;
+            position: sticky;
+            top: 5rem;
+        }
+        .layout-news-active :host ::ng-deep .p-datatable tr > th {
+            top: 7rem;
+        }
+    `
+]
 })
 export class HeroesComponent implements OnInit {
 
@@ -33,7 +48,7 @@ export class HeroesComponent implements OnInit {
 
   cols: any[];
 
-  columnsWidth: any;
+  columnsWidth: number;
 
   first = 0;
 
@@ -86,11 +101,16 @@ export class HeroesComponent implements OnInit {
       { field: 'id', header: 'Id' },
       { field: 'name', header: 'Name' },
       { field: 'typeId', header: 'TypeId' },
+      { field: 'id', header: 'Id2' },
     ];
 
-    this.columnsWidth = (1/this.cols.length)*100;
+    this.columnsWidth = (1 / this.cols.length) * 100;
     console.log(this.columnsWidth);
-    
+
+    // this.columnsWidth = `Hero "${this.newHero.name}" added!`
+
+    this.reloadTable();
+
   }
 
   // Versión 1 - A veces se usará
@@ -142,7 +162,7 @@ export class HeroesComponent implements OnInit {
 
 
   getHeroes(): void {
-    this.heroService.getHeroes().subscribe(heroes =>{ 
+    this.heroService.getHeroes().subscribe(heroes => {
       this.heroes = heroes;
       // this.heroes = [...heroes];
     });

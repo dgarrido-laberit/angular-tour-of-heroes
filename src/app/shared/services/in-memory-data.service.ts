@@ -17,6 +17,15 @@ export class InMemoryDataService implements InMemoryDbService {
       { id: 18, name: 'Dr. IQ', typeId: 2 },
       { id: 19, name: 'Magma', typeId: 2 },
       { id: 20, name: 'Tornado', typeId: 1 },
+      { id: 21, name: 'Dr. Nice', typeId: 1 },
+      { id: 22, name: 'Bombastico', typeId: 3 },
+      { id: 23, name: 'Celeritas', typeId: 2 },
+      { id: 24, name: 'Magneta', typeId: 1 },
+      { id: 25, name: 'RubberMan', typeId: 3 },
+      { id: 26, name: 'Dynama', typeId: 1 },
+      { id: 27, name: 'Dr. IQ', typeId: 2 },
+      { id: 28, name: 'Magma', typeId: 2 },
+      { id: 29, name: 'Tornado', typeId: 1 },
     ];
     const users = [
       {
