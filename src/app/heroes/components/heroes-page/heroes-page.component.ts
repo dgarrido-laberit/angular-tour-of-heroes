@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { ChangeDetectorRef, Component, OnInit, ViewChild } from '@angular/core';
 import { Hero } from '../../models/hero.model'
 // import { HEROES } from '../mock-heroes';
 import { HeroService } from '../../../shared/services/hero.service';
@@ -29,6 +29,15 @@ export class HeroesComponent implements OnInit {
 
   // heroes = HEROES;
   heroes: Hero[] = [];
+  // heroesTable: Hero[] = [];
+
+  cols: any[];
+
+  columnsWidth: any;
+
+  first = 0;
+
+  showTable = true;
 
   msgs1: Message[];
 
@@ -53,6 +62,7 @@ export class HeroesComponent implements OnInit {
   constructor(
     private heroService: HeroService,
     private userService: UserService,
+    private ref: ChangeDetectorRef,
     // private messageService: MessageService,
     // private formBuilder: FormBuilder,
   ) { }
@@ -67,6 +77,20 @@ export class HeroesComponent implements OnInit {
     this.getHeroes();
 
     this.getUsersPromiseAsync();
+
+    this.initTableCols();
+  }
+
+  initTableCols(): void {
+    this.cols = [
+      { field: 'id', header: 'Id' },
+      { field: 'name', header: 'Name' },
+      { field: 'typeId', header: 'TypeId' },
+    ];
+
+    this.columnsWidth = (1/this.cols.length)*100;
+    console.log(this.columnsWidth);
+    
   }
 
   // Versión 1 - A veces se usará
@@ -74,6 +98,19 @@ export class HeroesComponent implements OnInit {
     this.userService.getUsers().subscribe(data => {
       this.users = data;
     });
+  }
+
+  /**
+  * Fully refresh table component
+  */
+  reloadTable(): void {
+    // this.ref.detectChanges();
+    // this.first = 0;
+    // this.heroesTable = [...this.heroes];
+    this.showTable = false;
+    this.ref.detectChanges();
+    this.showTable = true;
+    // this.ref.detectChanges();
   }
 
   // // // Versión 2 - no recomendable (mejor usar promesas con async / await en vez de .then)
@@ -105,8 +142,10 @@ export class HeroesComponent implements OnInit {
 
 
   getHeroes(): void {
-    this.heroService.getHeroes().subscribe(heroes =>
-      this.heroes = heroes);
+    this.heroService.getHeroes().subscribe(heroes =>{ 
+      this.heroes = heroes;
+      // this.heroes = [...heroes];
+    });
   }
 
   add(name: string): void {
@@ -123,6 +162,7 @@ export class HeroesComponent implements OnInit {
 
   onClickDelete(hero: Hero) {
     this.delete(hero);
+    this.reloadTable();
   }
 
   // onClickAddHero(): void {
@@ -160,7 +200,7 @@ export class HeroesComponent implements OnInit {
 
   closeModalDialogHide() {
     if (this.msgs1.length != 0) return;
-    
+
     this.addMessages2();
     this.heroesCreateForm.resetForm();
     // this.showViaService();
@@ -173,12 +213,13 @@ export class HeroesComponent implements OnInit {
     this.displayModal = false;
     this.addMessages1();
     this.heroesCreateForm.resetForm();
+    this.reloadTable();
     // this.showViaService();
   }
 
   addMessages1() {
     this.msgs1 = [
-      { severity: 'success', summary: 'Success:', detail:`Hero "${this.newHero.name}" added!` },
+      { severity: 'success', summary: 'Success:', detail: `Hero "${this.newHero.name}" added!` },
     ];
   }
 

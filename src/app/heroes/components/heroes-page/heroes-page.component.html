@@ -100,6 +100,57 @@
   </div>
 
 
+
+  <!-- <div class="heroes-page_table">  Forma manual
+    <p-table [value]="heroes">
+      <ng-template pTemplate="header">
+        <tr>
+          <th>Id</th>
+          <th>Name</th>
+          <th>TypeId</th>
+        </tr>
+      </ng-template>
+      <ng-template pTemplate="body" let-hero>
+        <tr>
+          <td>{{hero.id}}</td>
+          <td>{{hero.name}}</td>
+          <td>{{hero.typeId}}</td>
+        </tr>
+      </ng-template>
+    </p-table>
+  </div> -->
+
+  <div class="heroes-page_table" *ngIf="showTable"> <!-- Forma dinámica -->
+    <p-table [value]="heroes" [resizableColumns]="true" sortMode="multiple" [paginator]="true" [columns]="cols" [rows]="4" [(first)]="first"
+      [resizableColumns]="true">
+      <ng-template pTemplate="header">
+        <tr>
+          <th *ngFor="let col of cols"  style="width: columnsWidth" [pSortableColumn]="col.field">{{col.header}}</th>
+        </tr>
+      </ng-template>
+      <ng-template pTemplate="body" let-hero>
+        <tr>
+          <td *ngFor="let col of cols">{{hero[col.field]}}</td>
+        </tr>
+      </ng-template>
+    </p-table>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
   <div class="users">
     <ul class="users_list">
       <li *ngFor="let user of users" class="users_list_element">
