@@ -30,10 +30,10 @@ export class TodoService {
 
   getTodos(): Promise<Todo[]> {
     return firstValueFrom(this.http.get<Todo[]>(this.todoUrl))
-      // .pipe(
-      //   tap(_ => this.log('fetched values')),
-      //   catchError(this.handleError<Todo[]>('getTodos', []))
-      // );
+    // .pipe(
+    //   tap(_ => this.log('fetched values')),
+    //   catchError(this.handleError<Todo[]>('getTodos', []))
+    // );
   }
 
   private handleError<T>(operation = 'operation', result?: T) {

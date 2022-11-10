@@ -9,8 +9,8 @@ const routes: Routes = [
   { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
 
   { path: 'dashboard', component: DashboardComponent },
-  { path: 'heroes', loadChildren: () => import('./heroes/heroes.module').then(m => m.HeroesModule)},
-  { path: 'tasks', loadChildren: () => import('./tasks/tasks.module').then(m => m.TasksModule)},
+  { path: 'heroes', loadChildren: () => import('./heroes/heroes.module').then(m => m.HeroesModule) },
+  { path: 'tasks', loadChildren: () => import('./tasks/tasks.module').then(m => m.TasksModule) },
 
   { path: '**', redirectTo: '', pathMatch: 'full' }, //Ruta cuando te equivocas de url (tiene que ir al final)
 ];

@@ -19,10 +19,6 @@
   position: relative;
   cursor: pointer;
 
-  .etiqueta {
-    font-weight: bold;
-  }
-
   &:hover {
     color: var(--color-1-ultra-dark);
     background-color: var(--color-2-almost-white);
@@ -37,27 +33,42 @@
   &_list {
     list-style-type: none;
 
-    &_title {
-      font-style: italic;
-      // overflow-wrap: break-word;
-      overflow: hidden;
-      // white-space: nowrap;
-      text-overflow: ellipsis;
+    &_header {
+
+      &_prefix {
+        font-weight: bold;
+      }
+
+      &_title {
+        font-style: italic;
+        // overflow-wrap: break-word;
+        overflow: hidden;
+        // white-space: nowrap;
+        text-overflow: ellipsis;
+      }
     }
 
     &_completed {
-      background-color: var(--color-2-almost-white);
-      color: var(--color-6-light);
 
+      &_text {
+        background-color: var(--color-2-almost-white);
+        color: var(--color-6-light);
+      }
     }
 
     &_id {
-      text-shadow: 0 0.1rem 0.4rem var(--color-6);
+
+      &_text {
+        text-shadow: 0 0.1rem 0.4rem var(--color-6);
+      }
     }
 
-    &_userId {
-      font-size: 2rem;
-      text-align: center;
+    &_uid {
+
+      &_text {
+        font-size: 2rem;
+        text-align: center;
+      }
     }
   }
 }

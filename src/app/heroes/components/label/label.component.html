@@ -1,13 +1,10 @@
 <div class="label">
-    <!-- <div>
-        <span class="label_text">{{text}}</span>
-      </div> -->
-      <span class="label_text">*</span>
-    
-    <div>
-        <input id="labelInput"
-            name="labelInput"
-            [ngModel]="text"
-            (ngModelChange)="onChangeText($event)">
-    </div>
+  <!-- <div>
+    <span class="label_text">{{text}}</span>
+  </div> -->
+  <span class="label_text">*</span>
+  <div class="label_block">
+    <input class="label_block_input" id="labelInput" name="labelInput" [ngModel]="text"
+      (ngModelChange)="onChangeText($event)">
+  </div>
 </div>

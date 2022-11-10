@@ -3,7 +3,7 @@
   <h2>My Heroes</h2>
 
 
-  <div class="heroes-page_add-hero">
+  <div class="heroes-page_add">
     <!-- <p-dialog header="Title" [(visible)]="display" [breakpoints]="{'960px': '75vw', '640px': '100vw'}"
     [style]="{width: '50vw'}">
     Content
@@ -11,24 +11,28 @@
 
     <!-- <button type="button" (click)="showDialog()" icon="pi pi-info-circle" label="Show">Add Heroes</button> -->
 
-    <p-button class="heroes-page_add-hero_button" (click)="showModalDialog()" icon="pi pi-arrow-right" iconPos="right" label="Add Heroes"></p-button>
-    <p-dialog (onHide)="closeModalDialogHide()" header="Header" [(visible)]="displayModal" [modal]="true"
-      [style]="{width: '50vw'}" [draggable]="false" [resizable]="false">
-      <form #heroesCreateForm="ngForm" id="heroesCreateForm" name="heroesCreateForm" (ngSubmit)="onSubmitHero()">
-        <label id="new-hero-label" for="new-hero">Hero name: </label>
-        <input id="new-hero" name="new-hero" [(ngModel)]="newHero.name" pInputText required="" />
+    <p-button class="heroes-page_add_button" (click)="showModalDialog()" icon="pi pi-arrow-right" iconPos="right"
+      label="Add Heroes"></p-button>
+    <p-dialog class="heroes-page_add_dialog" (onHide)="closeModalDialogHide()" header="Header"
+      [(visible)]="displayModal" [modal]="true" [style]="{width: '50vw'}" [draggable]="false" [resizable]="false">
+      <form class="heroes-page_add_dialog_form" #heroesCreateForm="ngForm" id="heroesCreateForm" name="heroesCreateForm"
+        (ngSubmit)="onSubmitHero()">
+        <label class="heroes-page_add_dialog_form_label" id="new-hero-label" for="new-hero">Hero name: </label>
+        <input class="heroes-page_add_dialog_form_input" id="new-hero" name="new-hero" [(ngModel)]="newHero.name"
+          pInputText required="" />
       </form>
       <ng-template pTemplate="footer">
         <!-- <p-button icon="pi pi-times" (click)="closeModalDialog()" label="Cancel" styleClass="p-button-text"></p-button> -->
-        <button pButton pRipple form="heroesCreateForm" label="Add Hero" icon="pi pi-check" type="submit"
-          [disabled]="heroesCreateForm.invalid" class="p-button-rounded p-button-success"></button>
-        <button pButton type="button" pRipple label="Cancel" icon="pi pi-times" (click)="closeModalDialog()"
-          class="p-button-rounded"></button>
+        <button class="heroes-page_add_dialog_button p-button-rounded p-button-success" pButton pRipple
+          form="heroesCreateForm" label="Add Hero" icon="pi pi-check" type="submit"
+          [disabled]="heroesCreateForm.invalid"></button>
+        <button class="heroes-page_add_dialog_button p-button-rounded" pButton type="button" pRipple label="Cancel"
+          icon="pi pi-times" (click)="closeModalDialog()"></button>
 
         <!-- <p-button icon="pi pi-check" (click)="onSubmitHero()" label="Add Hero" styleClass="p-button-text"></p-button> -->
       </ng-template>
     </p-dialog>
-    <p-messages [(value)]="msgs1" [enableService]="false"></p-messages>
+    <p-messages class="heroes-page_add-hero_message" [(value)]="msgs1" [enableService]="false"></p-messages>
   </div>
 
   <!-- <div> -->
@@ -79,10 +83,13 @@
               <span class="heroes-page_container_card_link_badge">{{hero.id}}</span>
               <span class="heroes-page_container_card_link_name">{{hero.name}}</span>
               <!-- <span *ngIf="hero.typeId"> - {{heroTypeNames[hero.typeId]}}</span> -->
-              <span *ngIf="hero.typeId"> - </span>
-              <app-hero-type [(typeId)]="hero.typeId"></app-hero-type>
+              <span class="heroes-page_container_card_link_type" *ngIf="hero.typeId">
+                -
+                <app-hero-type [(typeId)]="hero.typeId"></app-hero-type>
+              </span>
             </a>
-            <button type="button" class="heroes-page_container_card_button-delete" title="delete hero" (click)="onClickDelete(hero)">x</button>
+            <button class="heroes-page_container_card_button-delete" type="button" title="delete hero"
+              (click)="onClickDelete(hero)">x</button>
             <app-label [(text)]="hero.name"></app-label>
             <!-- <app-label [text]="hero.name" (textChange)="onChangeTextParent($event, hero)"></app-label> -->
             <!-- <app-label [text]="hero.name" (textChange)="hero.name = $event"></app-label> -->
@@ -104,7 +111,5 @@
       </li>
     </ul>
   </div>
-
   <!-- <app-hero-detail [hero]="selectedHero"></app-hero-detail> -->
-
 </div>

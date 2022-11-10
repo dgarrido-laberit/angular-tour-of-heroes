@@ -1,36 +1,23 @@
 /* todosComponent's private CSS styles */
-// .todos-page {
-//   margin: 0 0 2em 0;
-//   list-style-type: none;
-//   padding: 0;
-//   width: 15em;
+.todos-page {
 
-//   &_ind {
-//     position: relative;
-//     cursor: pointer;
+  &_container {
+    display: flex;
+    flex-flow: row;
+    flex-wrap: wrap;
+    background-color: var(--color-1-ultra-light);
 
-//     &:hover {
-//       left: .1em;
-//     }
-//   }
-// }
+    justify-content: left;
+    // justify-content: space-around;
+    border-radius: 2rem;
+    margin: 0 auto;
+    padding: 2rem;
+    // flex-direction: row;
+    // flex-grow: 1;
 
-.flex-container {
-  display: flex;
-  flex-flow: row;
-  flex-wrap: wrap;
-  background-color: var(--color-1-ultra-light);
-
-  justify-content: left;
-  // justify-content: space-around;
-  border-radius: 2rem;
-  margin: 0 auto;
-  padding: 2rem;
-  // flex-direction: row;
-  // flex-grow: 1;
-
-  &_todo {
-    width: 33%;
-    box-sizing: border-box;
+    &_todo {
+      width: 33%;
+      box-sizing: border-box;
+    }
   }
 }
