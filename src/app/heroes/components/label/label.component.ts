@@ -10,16 +10,17 @@ export class LabelComponent implements OnInit {
 
   @Input() text?: string;
 
+  @Input() styleClass: string;
+
   @Output() textChange = new EventEmitter<string>();
 
   constructor() { }
- 
+
   ngOnInit(): void {
   }
 
-  onChangeText (text: string): void {
+  onChangeText(text: string): void {
     console.log("CH: " + text);
     this.textChange.emit(text);
   }
-
 }
