@@ -1,16 +1,19 @@
 /* HeroDetailComponent's private CSS styles */
 .hero-detail {
-  
+
   &_info {
 
-    &_label {
-      color: #435960;
-      font-weight: bold;
-    }
+    &_atributes {
 
-    &_input {
-      font-size: 1em;
-      padding: .5rem;
+      &_label {
+        color: var(--color-1-really-dark);
+        font-weight: bold;
+      }
+
+      &_input {
+        font-size: 1em;
+        padding: .5rem;
+      }
     }
   }
 
@@ -33,5 +36,4 @@
       cursor: auto;
     }
   }
-  
 }

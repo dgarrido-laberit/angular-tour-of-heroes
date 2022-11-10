@@ -1,5 +1,5 @@
 /* HeroSearch private styles */
-.heroes-search{
+.heroes-search {
   &_label {
     display: block;
     font-weight: bold;
@@ -19,7 +19,7 @@
       outline: var(--color-2-dark) auto 1px;
     }
   }
-  
+
   &_result {
     margin-top: 0;
     padding-left: 0;
@@ -40,7 +40,7 @@
         color: var(--color-2-black);
 
         &:hover {
-          background-color: #435A60;
+          background-color: var(--color-1-very-dark);
           color: var(--color-2-white);
         }
       }
