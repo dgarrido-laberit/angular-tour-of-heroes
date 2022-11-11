@@ -125,25 +125,25 @@
     <p-table [value]="heroes" [paginator]="true" [(first)]="first" [resizableColumns]="true" sortMode="multiple"
       [columns]="cols" [rows]="4" [(first)]="first" (onLazyLoad)="loadNodes($event)" [totalRecords]="1000"
       [loading]="loading" (onNodeExpand)="onNodeExpand($event)" [metaKeySelection]="false" selectionMode="single"
-      [(selection)]="selectedHero" dataKey="code" [selectionPageOnly]="true"
-      (onRowSelect)="onRowSelect($event)" (onRowUnselect)="onRowUnselect($event)">
+      [(selection)]="selectedHero" dataKey="code" [selectionPageOnly]="true" (onRowSelect)="onRowSelect($event)"
+      (onRowUnselect)="onRowUnselect($event)">
       <ng-template class="heroes-page_table_header" pTemplate="header">
         <tr class="heroes-page_table_table_header_tr">
-          <!-- <th class="heroes-page_table_table_header_tr_th" *ngFor="let col of cols"
-            [ngStyle]="{'width.%': columnsWidth}" [pSortableColumn]="col.field">{{col.header}}</th> -->
-          <th>Id</th>
+          <th class="heroes-page_table_table_header_tr_th" *ngFor="let col of cols"
+            [ngStyle]="{'width.%': columnsWidth}" [pSortableColumn]="col.field">{{col.header}}</th>
+          <!-- <th>Id</th>
           <th>Name</th>
-          <th>TypeId</th>
+          <th>TypeId</th> -->
         </tr>
       </ng-template>
       <ng-template class="heroes-page_table_body" pTemplate="body" let-hero let-i="rowIndex">
         <tr class="heroes-page_table_body_tr" [pSelectableRow]="hero">
-          <!-- <td [class]="(i%2) == 0 ? 'heroes-page_table_body_tr_dark' : 'heroes-page_table_body_tr_light'"
-            *ngFor="let col of cols">{{hero[col.field]}}</td> -->
-          <td>{{hero.id}}</td>
+          <td [class]="(i%2) == 0 ? 'heroes-page_table_body_tr_dark' : 'heroes-page_table_body_tr_light'"
+            *ngFor="let col of cols">{{hero[col.field]}}</td>
+          <!-- <td>{{hero.id}}</td>
           <td>{{hero.name}}</td>
           <td>{{hero.typeId}}</td>
-          <!-- <td>{{hero.id}}</td> -->
+          <td>{{hero.id}}</td> -->
         </tr>
       </ng-template>
     </p-table>

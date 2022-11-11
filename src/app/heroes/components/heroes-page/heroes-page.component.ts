@@ -39,7 +39,7 @@ import { Message, MessageService, TreeNode } from 'primeng/api';
             top: 7rem;
         }
     `
-]
+  ]
 })
 export class HeroesComponent implements OnInit {
 
@@ -49,38 +49,38 @@ export class HeroesComponent implements OnInit {
   heroes: Hero[] = [];
   // heroesTable: Hero[] = [];
 
-  
+
   cols: any[];
-  
+
   columnsWidth: number;
-  
+
   first = 0;
-  
+
   showTable = true;
-  
+
   msgs1: Message[];
-  
+
   displayModal: boolean = false;
-  
+
   // Lazy laoding
   loading = false;
-  
+
   files: TreeNode[];
-  
+
   totalRecords = 0;
-  
-  
+
+
   // heroTypes = heroTypes;
   // heroTypeNames = heroTypeNames;
 
   // selectedHero: Hero;
-  
+
   name = 'hero';
-  
+
   users: User[];
-  
+
   newHero = new Hero();
-  
+
   hero: Hero;
 
   selectedHero: Hero;
@@ -288,65 +288,65 @@ export class HeroesComponent implements OnInit {
 
     //imitate db connection over a network
     setTimeout(() => {
-        this.loading = false;
-        this.files = [];
+      this.loading = false;
+      this.files = [];
 
-        for(let i = 0; i < event.rows; i++) {
-            let node = {
-                data: {  
-                    id: 'Item ' + (event.first + i),
-                    name: Math.floor(Math.random() * 1000) + 1 + 'kb',
-                    typeId: 'Type ' + (event.first + i),
-                    id2: 'Item ' + (event.first + i)                    
-                },
-                leaf: false
-            };
+      for (let i = 0; i < event.rows; i++) {
+        let node = {
+          data: {
+            id: 'Item ' + (event.first + i),
+            name: Math.floor(Math.random() * 1000) + 1 + 'kb',
+            typeId: 'Type ' + (event.first + i),
+            id2: 'Item ' + (event.first + i)
+          },
+          leaf: false
+        };
 
-            this.files.push(node);
-        }
+        this.files.push(node);
+      }
     }, 1000);
-}
+  }
 
 
-onNodeExpand(event: any) {
-  this.loading = true;
+  onNodeExpand(event: any) {
+    this.loading = true;
 
-  setTimeout(() => {
+    setTimeout(() => {
       this.loading = false;
       const node = event.node;
 
       node.children = [
-          {
-              data: {  
-                  name: node.data.name + ' - 0',
-                  size: Math.floor(Math.random() * 1000) + 1 + 'kb',
-                  type: 'File'
-              },
+        {
+          data: {
+            name: node.data.name + ' - 0',
+            size: Math.floor(Math.random() * 1000) + 1 + 'kb',
+            type: 'File'
           },
-          {
-              data: {  
-                  name: node.data.name + ' - 1',
-                  size: Math.floor(Math.random() * 1000) + 1 + 'kb',
-                  type: 'File'
-              }
+        },
+        {
+          data: {
+            name: node.data.name + ' - 1',
+            size: Math.floor(Math.random() * 1000) + 1 + 'kb',
+            type: 'File'
           }
+        }
       ];
 
       this.files = [...this.files];
-  }, 250);
-  
-}
+    }, 250);
+
+  }
 
 
-onRowSelect(event: any) {
-  this.messageService.add({  severity: 'info', summary: 'Product Selected', detail: event.data.name });
-  console.log('eweeqsad');
-  
-}
+  onRowSelect(event: any) {
+    this.messageService.add({ severity: 'info', summary: 'Product Selected', detail: event.data.name });
+    console.log('eweeqsad');
 
-onRowUnselect(event: any) {
-  this.messageService.add({ severity: 'info', summary: 'Product Unselected', detail: event.data.name });
-  console.log('eweeqsad2');
-}
+  }
+
+  onRowUnselect(event: any) {
+    this.messageService.add({ severity: 'info', summary: 'Product Unselected', detail: event.data.name });
+    console.log('eweeqsad2');
+  }
 
 }
