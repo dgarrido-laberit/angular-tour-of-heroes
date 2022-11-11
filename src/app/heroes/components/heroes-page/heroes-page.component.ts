@@ -15,13 +15,16 @@ import { FormBuilder, NgForm, NgModel, Validators } from '@angular/forms';
 
 // import { ModelComponent } from '../../models/model-component.model';
 
-import { Message, MessageService } from 'primeng/api';
+import { Message, MessageService, TreeNode } from 'primeng/api';
+
+
 
 
 @Component({
   selector: 'app-heroes-page',
   templateUrl: './heroes-page.component.html',
   styleUrls: ['./heroes-page.component.scss'],
+  providers: [MessageService],
   styles: [
     `
         :host ::ng-deep .p-datatable > .p-datatable-wrapper {
@@ -46,28 +49,41 @@ export class HeroesComponent implements OnInit {
   heroes: Hero[] = [];
   // heroesTable: Hero[] = [];
 
+  
   cols: any[];
-
+  
   columnsWidth: number;
-
+  
   first = 0;
-
+  
   showTable = true;
-
+  
   msgs1: Message[];
-
+  
   displayModal: boolean = false;
-
+  
+  // Lazy laoding
+  loading = false;
+  
+  files: TreeNode[];
+  
+  totalRecords = 0;
+  
+  
   // heroTypes = heroTypes;
   // heroTypeNames = heroTypeNames;
 
   // selectedHero: Hero;
-
+  
   name = 'hero';
-
+  
   users: User[];
-
+  
   newHero = new Hero();
+  
+  hero: Hero;
+
+  selectedHero: Hero;
 
   // users = [
   //   {name: "hola"}
@@ -78,7 +94,7 @@ export class HeroesComponent implements OnInit {
     private heroService: HeroService,
     private userService: UserService,
     private ref: ChangeDetectorRef,
-    // private messageService: MessageService,
+    private messageService: MessageService,
     // private formBuilder: FormBuilder,
   ) { }
 
@@ -101,7 +117,7 @@ export class HeroesComponent implements OnInit {
       { field: 'id', header: 'Id' },
       { field: 'name', header: 'Name' },
       { field: 'typeId', header: 'TypeId' },
-      { field: 'id', header: 'Id2' },
+      // { field: 'id', header: 'Id2' },
     ];
 
     this.columnsWidth = (1 / this.cols.length) * 100;
@@ -127,9 +143,9 @@ export class HeroesComponent implements OnInit {
     // this.ref.detectChanges();
     // this.first = 0;
     // this.heroesTable = [...this.heroes];
-    this.showTable = false;
-    this.ref.detectChanges();
-    this.showTable = true;
+    // this.showTable = false;
+    // this.ref.detectChanges();
+    // this.showTable = true;
     // this.ref.detectChanges();
   }
 
@@ -258,5 +274,79 @@ export class HeroesComponent implements OnInit {
   //     this.messageService.add(element); 
   //   });
   // }
+
+
+  loadNodes(event: any) {
+    this.loading = true;
+
+    //in a production application, make a remote request to load data using state metadata from event
+    //event.first = First row offset
+    //event.rows = Number of rows per page
+    //event.sortField = Field name to sort with
+    //event.sortOrder = Sort order as number, 1 for asc and -1 for dec
+    //filters: FilterMetadata object having field as key and filter value, filter matchMode as value
+
+    //imitate db connection over a network
+    setTimeout(() => {
+        this.loading = false;
+        this.files = [];
+
+        for(let i = 0; i < event.rows; i++) {
+            let node = {
+                data: {  
+                    id: 'Item ' + (event.first + i),
+                    name: Math.floor(Math.random() * 1000) + 1 + 'kb',
+                    typeId: 'Type ' + (event.first + i),
+                    id2: 'Item ' + (event.first + i)                    
+                },
+                leaf: false
+            };
+
+            this.files.push(node);
+        }
+    }, 1000);
+}
+
+
+onNodeExpand(event: any) {
+  this.loading = true;
+
+  setTimeout(() => {
+      this.loading = false;
+      const node = event.node;
+
+      node.children = [
+          {
+              data: {  
+                  name: node.data.name + ' - 0',
+                  size: Math.floor(Math.random() * 1000) + 1 + 'kb',
+                  type: 'File'
+              },
+          },
+          {
+              data: {  
+                  name: node.data.name + ' - 1',
+                  size: Math.floor(Math.random() * 1000) + 1 + 'kb',
+                  type: 'File'
+              }
+          }
+      ];
+
+      this.files = [...this.files];
+  }, 250);
+  
+}
+
+
+onRowSelect(event: any) {
+  this.messageService.add({  severity: 'info', summary: 'Product Selected', detail: event.data.name });
+  console.log('eweeqsad');
+  
+}
+
+onRowUnselect(event: any) {
+  this.messageService.add({ severity: 'info', summary: 'Product Unselected', detail: event.data.name });
+  console.log('eweeqsad2');
+}
 
 }
