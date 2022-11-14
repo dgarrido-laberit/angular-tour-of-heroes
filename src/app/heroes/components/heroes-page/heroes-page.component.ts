@@ -340,13 +340,15 @@ export class HeroesComponent implements OnInit {
 
   onRowSelect(event: any) {
     this.messageService.add({ severity: 'info', summary: 'Product Selected', detail: event.data.name });
-    console.log('eweeqsad');
+    console.log('selected');
+    console.log(event);
 
   }
 
   onRowUnselect(event: any) {
     this.messageService.add({ severity: 'info', summary: 'Product Unselected', detail: event.data.name });
-    console.log('eweeqsad2');
+    console.log('deselected');
+    console.log(event);
   }
 
 }
